@@ -1,8 +1,19 @@
 package com.chainsys.bookmanagement.pojo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="authorbookdetails")
 public class AuthorBookDetails {
+	@Id
+	@Column(name="AUTHORID")
 private int authorId;
+	@Column(name="BOOKID")
 private int bookId;
+	@Column(name="ROYALTY")
 private String royalty;
 public int getAuthorId() {
 	return authorId;

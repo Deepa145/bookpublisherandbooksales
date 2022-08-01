@@ -2,13 +2,27 @@ package com.chainsys.bookmanagement.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="book")
 public class Book {
+	@Id
+	@Column(name="BOOKID")
 private int bookId;
+	@Column(name="BOOKNAME")
 private String bookName;
+	@Column(name="DATEOFPUBLISHING")
 private Date dateOfPublishing;
+	@Column(name="CATEGORY")
 private String category;
+	@Column(name="PRICE")
 private double price;
-private long stockInHand;
+	@Column(name="STOCKINHAND")
+private int stockInHand;
+	@Column(name="SALES")
 private long sales;
 public int getBookId() {
 	return bookId;
@@ -40,10 +54,10 @@ public double getPrice() {
 public void setPrice(double price) {
 	this.price = price;
 }
-public long getStockInHand() {
+public int getStockInHand() {
 	return stockInHand;
 }
-public void setStockInHand(long stockInHand) {
+public void setStockInHand(int stockInHand) {
 	this.stockInHand = stockInHand;
 }
 public long getSales() {

@@ -1,9 +1,21 @@
 package com.chainsys.bookmanagement.pojo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="orderdetails")
 public class OrderDetails {
+	@Id
+	@Column(name="ORDEREDID")
 private int orderedId;
+	@Column(name="BOOKID")
 private int bookId;
+	@Column(name="QUANTITY")
 private long quantity;
+	@Column(name="AMOUNT")
 private double amount;
 public int getOrderedId() {
 	return orderedId;

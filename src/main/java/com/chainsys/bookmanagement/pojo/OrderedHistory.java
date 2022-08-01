@@ -2,11 +2,24 @@ package com.chainsys.bookmanagement.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="orderedhistory")
 public class OrderedHistory {
+	@Id
+	@Column(name="orderedId")
 private int orderedId;
+	@Column(name="status")
 private String status;
+	@Column(name="shopId")
 private int shopId;
+	@Column(name="orderedDate")
 private Date orderedDate;
+	@Column(name="totalAmount")
 private double totalAmount;
 public int getOrderedId() {
 	return orderedId;
