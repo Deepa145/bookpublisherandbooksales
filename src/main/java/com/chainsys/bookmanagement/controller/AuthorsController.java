@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.bookmanagement.pojo.Authors;
-import com.chainsys.bookmanagement.pojo.Book;
+import com.chainsys.bookmanagement.model.Authors;
+import com.chainsys.bookmanagement.model.Book;
 import com.chainsys.bookmanagement.service.AuthorsService;
 
 @Controller
@@ -22,7 +22,7 @@ public class AuthorsController {
 	    AuthorsService auservice;
 	 @GetMapping("/list")
 	    public String getallAuthors(Model model) {
-	    	List<Authors> theauthor = auservice.getallAuthors();
+	    	List<Authors> theauthor = auservice.getAuthors();
 	    	model.addAttribute("allauthors", theauthor);
 	        return "list-authors";
 	    }
@@ -55,7 +55,7 @@ public class AuthorsController {
 	        return "update-authors-form";
 	    }
 	    
-	    @PostMapping("/updatebook")
+	    @PostMapping("/updateauthors")
 	    public String UpdateAuthors(@ModelAttribute("updateauthor") Authors theauthor)
 	    {
 	    	auservice.save(theauthor);

@@ -1,6 +1,7 @@
 package com.chainsys.bookmanagement.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.bookmanagement.pojo.OrderDetails;
+import com.chainsys.bookmanagement.compositekey.OrderdDetailsCompositeKey;
+import com.chainsys.bookmanagement.model.OrderDetails;
 import com.chainsys.bookmanagement.service.OrderDetailsService;
 
 
@@ -19,51 +21,55 @@ import com.chainsys.bookmanagement.service.OrderDetailsService;
 @RequestMapping("/orderdetails")
 public class OrderDetailsController {
 	 @Autowired
-	 OrderDetailsService odservice;
-	 @GetMapping("/list")
+	private OrderDetailsService orderDetailsService;
+	 @GetMapping("/orderdetailslist")
 	    public String getallOrderDetails(Model model) {
-	    	List<OrderDetails> theod = odservice.getallOrderDetails();
-	    	model.addAttribute("allOrderDetails", theod);
+	    	List<OrderDetails> allorderDetails = orderDetailsService.getallOrderDetails();
+	    	model.addAttribute("allOrderDetails", allorderDetails);
 	        return "list-orderdetails";
 	    }
 	 
-	 @GetMapping("/findorderdetailsbyid")
-	    public String findOrderDetailsById(@RequestParam("odid") int id, Model model) {
-	        OrderDetails theod = odservice.findById(id);
-	        model.addAttribute("findorderdetailsbyid", theod);
-	        return "find-orderdetails-id-form";
+	 @GetMapping("/findorderbookdetailsbyid")
+	    public String findOrderBookDetailsById(@RequestParam("orderedid") int orderedid,@RequestParam("bookid")int bookid, Model model) {
+	        OrderdDetailsCompositeKey orderdDetailsCompositeKey = new OrderdDetailsCompositeKey(orderedid, bookid);
+	        model.addAttribute("findorderbookdetailsbyid", orderdDetailsCompositeKey);
+	        return "find-orderbookdetails-id-form";
 	    }
 	    
-	    @GetMapping("/addform")
+	    @GetMapping("/addorderdetails")
 	    public String showAddForm(Model model) {
-	    	OrderDetails theod = new OrderDetails();
-	        model.addAttribute("addorderdetails", theod);
-	        return "add-orderdetails-form";
+	    	List<OrderDetails> allorderDetails = orderDetailsService.allorderdHistory();
+	        model.addAttribute("allOrderbookDetails", allorderDetails);
+	        OrderDetails theorderdetails=new OrderDetails();
+	        model.addAttribute("addorderDetails", theorderdetails);
+	        return "add-orderbookdetails-form";
 	    }
 	    
 	    @PostMapping("/add")
 	    // We need give from where to read data from the HTTP request and also the content type ("application/json")
-	    public String addNewOrderDetails(@ModelAttribute("addorderdetails") OrderDetails od) {
-	    	odservice.save(od);
-	        return "redirect:/orderdetails/list";
+	    public String addNewOrderDetails(@ModelAttribute("addorderDetails") OrderDetails orderDetails) {
+	    	orderDetailsService.save(orderDetails);
+	        return "redirect:/orderdetails/orderdetailslist";
 	    }
 	    
-	    @GetMapping("/updateform")
-	    public String showUpdateForm(@RequestParam("odid") int id, Model model) {
-	        OrderDetails theod = odservice.findById(id);
-	        model.addAttribute("updateorderdetails", theod);
+	    @GetMapping("/updateorderdetails")
+	    public String showUpdateForm(@RequestParam("orderedid") int orderedid,@RequestParam("bookid")int bookid, Model model) {
+	        OrderdDetailsCompositeKey orderdDetailsCompositeKey = new OrderdDetailsCompositeKey(orderedid, bookid);
+	        Optional<OrderDetails> theorderdetails=orderDetailsService.findById(orderdDetailsCompositeKey);
+	        model.addAttribute("updateorderbookdetails", theorderdetails);
 	        return "update-orderdetails-form";
 	    }
 	    
 	    @PostMapping("/updateorderdetails")
-	    public String UpdateOrderDetails(@ModelAttribute("updateorderdetails") OrderDetails theod)
+	    public String UpdateOrderDetails(@ModelAttribute("updateorderbookdetails") OrderDetails orderDetails)
 	    {
-	    	odservice.save(theod);
-	     return "redirect:/orderdetails/list";
+	    	orderDetailsService.save(orderDetails);
+	    	 return "redirect:/orderdetails/orderdetailslist";
 	    }
-	    @GetMapping("/deleteorderdetails")
-	    public String deleteOrderDetails(@RequestParam("odid") int id) {
-	    	odservice.deleteById(id);
-	        return "redirect:/orderdetails/list";
+	    @GetMapping("/deleteorderbookdetails")
+	    public String deleteOrderDetails(@RequestParam("orderedid") int orderedid,@RequestParam("bookid")int bookid, Model model) {
+	    	OrderdDetailsCompositeKey orderdDetailsCompositeKey=new OrderdDetailsCompositeKey(orderedid, bookid);
+	    	orderDetailsService.deleteById(orderdDetailsCompositeKey);
+	    	 return "redirect:/orderdetails/orderdetailslist";
 	    }
 }

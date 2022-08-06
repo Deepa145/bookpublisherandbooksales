@@ -6,11 +6,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Book Order Details List</title>
+<title>Author and Authors Book List</title>
 </head>
 <body>
 	<div id="root">
-		<div id="docform">
+		<div id="form">
 			<form:form action="" method="post" modelAttribute="getbook">
 				<div>
 					<label for="bookId">Book Id</label>
@@ -56,27 +56,25 @@
 				</div>
 			</form:form>
 		</div>
-		<div id="OrderDetailslist">
-			<table>
-				<thead>
+	</div>
+<div id="table root">
+		<table>
+			<thead>
+				<tr>
+					<th>Author Id</th>
+					<th>Book Id</th>
+					<th>Royalty</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="ahbk" items="${authorbookdetailslist}">
 					<tr>
-						<th>Ordered Id</th>
-						<th>Book Id</th>
-						<th>Quantity</th>
-						<th>Amount</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="od" items="${OrderDetailslist}">
-						<tr>
-							<td>${od.orderedId}</td>
-							<td>${od.bookId}</td>
-							<td>${od.quantity}</td>
-							<td>${od.amount}</td>
-					</c:forEach>
-				</tbody>
-			</table>
-		</div>
+						<td>${ahbk.authorId}</td>
+						<td>${ahbk.bookId}</td>
+						<td>${ahbk.royalty}</td>						
+				</c:forEach>
+			</tbody>
+		</table>
 	</div>
 </body>
 </html>

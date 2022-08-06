@@ -1,8 +1,12 @@
-package com.chainsys.bookmanagement.pojo;
+package com.chainsys.bookmanagement.model;
+
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +21,16 @@ private String shopLocation;
 private String contactPerson;
 	@Column(name="PHONENUMBER")
 private long phoneNumber;
+	
+	@OneToMany(mappedBy = "shop",fetch=FetchType.LAZY)
+	private List<OrderedHistory> orderedHistories;
+	
+public List<OrderedHistory> getOrderedHistories() {
+		return orderedHistories;
+	}
+	public void setOrderedHistories(List<OrderedHistory> orderedHistories) {
+		this.orderedHistories = orderedHistories;
+	}
 public int getShopId() {
 	return shopId;
 }
@@ -41,10 +55,4 @@ public long getPhoneNumber() {
 public void setPhoneNumber(long phoneNumber) {
 	this.phoneNumber = phoneNumber;
 }
-@Override
-public String toString() {
-	return String.format("%d,%s,%s,%d",shopId,shopLocation,contactPerson,phoneNumber);
-}
-
-
 }

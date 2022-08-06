@@ -11,29 +11,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.bookmanagement.pojo.Shop;
+import com.chainsys.bookmanagement.model.Shop;
 import com.chainsys.bookmanagement.service.ShopService;
 
 @Controller
 @RequestMapping("/shop")
 public class ShopController {
 	 @Autowired
-	    ShopService shservice;
-	 @GetMapping("/list")
+	    ShopService shopService;
+	 @GetMapping("/shoplist")
 	    public String getallShops(Model model) {
-	    	List<Shop> theshop = shservice.getallShops();
+	    	List<Shop> theshop = shopService.getallShops();
 	    	model.addAttribute("allshops", theshop);
 	        return "list-shops";
 	    }
 	 
 	 @GetMapping("/findshopbyid")
-	    public String findShopById(@RequestParam("shopid") int id, Model model) {
-	        Shop theshop = shservice.findById(id);
+	    public String findShopById(@RequestParam("shopid") int shopid, Model model) {
+	        Shop theshop = shopService.findById(shopid);
 	        model.addAttribute("findshopbyid", theshop);
 	        return "find-shop-id-form";
 	    }
 	    
-	    @GetMapping("/addform")
+	    @GetMapping("/addshop")
 	    public String showAddForm(Model model) {
 	        Shop theshop = new Shop();
 	        model.addAttribute("addshops", theshop);
@@ -43,13 +43,13 @@ public class ShopController {
 	    @PostMapping("/add")
 	    // We need give from where to read data from the HTTP request and also the content type ("application/json")
 	    public String addNewShop(@ModelAttribute("addshops") Shop sh) {
-	    	shservice.save(sh);
-	        return "redirect:/shop/list";
+	    	shopService.save(sh);
+	        return "redirect:/shop/shoplist";
 	    }
 	    
-	    @GetMapping("/updateform")
+	    @GetMapping("/updateshop")
 	    public String showUpdateForm(@RequestParam("shopid") int shopid, Model model) {
-	        Shop theshop = shservice.findById(shopid);
+	        Shop theshop = shopService.findById(shopid);
 	        model.addAttribute("updateshop", theshop);
 	        return "update-shop-form";
 	    }
@@ -57,12 +57,12 @@ public class ShopController {
 	    @PostMapping("/updateshop")
 	    public String UpdateShops(@ModelAttribute("updateshop") Shop theshop)
 	    {
-	    	shservice.save(theshop);
-	     return "redirect:/shop/list";
+	    	shopService.save(theshop);
+	     return "redirect:/shop/shoplist";
 	    }
 	    @GetMapping("/deleteshop")
 	    public String deleteShop(@RequestParam("shopid") int shopid) {
-	    	shservice.deleteById(shopid);
-	        return "redirect:/shop/list";
+	    	shopService.deleteById(shopid);
+	        return "redirect:/shop/shoplist";
 	    }
 }

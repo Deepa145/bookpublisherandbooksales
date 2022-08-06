@@ -1,22 +1,42 @@
-package com.chainsys.bookmanagement.pojo;
+package com.chainsys.bookmanagement.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.chainsys.bookmanagement.compositekey.OrderdDetailsCompositeKey;
 
 @Entity
 @Table(name="orderdetails")
+@IdClass(OrderdDetailsCompositeKey.class)
 public class OrderDetails {
 	@Id
 	@Column(name="ORDEREDID")
 private int orderedId;
+	@Id
 	@Column(name="BOOKID")
 private int bookId;
 	@Column(name="QUANTITY")
-private long quantity;
+private int quantity;
 	@Column(name="AMOUNT")
 private double amount;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ORDEREDID", nullable = false, insertable = false, updatable = false)
+	private OrderedHistory orderedHistory;
+	
+
+public OrderedHistory getOrderedHistory() {
+		return orderedHistory;
+	}
+	public void setOrderedHistory(OrderedHistory orderedHistory) {
+		this.orderedHistory = orderedHistory;
+	}
 public int getOrderedId() {
 	return orderedId;
 }
@@ -29,10 +49,10 @@ public int getBookId() {
 public void setBookId(int bookId) {
 	this.bookId = bookId;
 }
-public long getQuantity() {
+public int getQuantity() {
 	return quantity;
 }
-public void setQuantity(long quantity) {
+public void setQuantity(int quantity) {
 	this.quantity = quantity;
 }
 public double getAmount() {
@@ -40,10 +60,5 @@ public double getAmount() {
 }
 public void setAmount(double amount) {
 	this.amount = amount;
-}
-
-@Override
-public String toString() {
-	return String.format("%d,%d,%d,%d",orderedId,bookId,quantity,amount);
 }
 }

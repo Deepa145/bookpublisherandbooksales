@@ -6,33 +6,36 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Author Book Details</title>
+<title>Find Order Book Details By Id</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="updateauthorbookdetail" method="post" modelAttribute="updateauthorbookdetails">
+			<form:form action="" method="post" modelAttribute="findorderbookdetailsbyid">
 				<div>
-					<label for="authorId">Author Id</label>
+					<label for="orderedId">Ordered Id</label>
 					<div>
-						<form:input path="authorId" />
+						<form:input path="orderedId" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="bookId">Book Id</label>
+						<div>
+							<form:input path="bookId" readonly="true" />
+						</div>
+				</div>
+				<div>
+					<label for="quantity">Quantity</label>
 					<div>
-						<form:input path="bookId" />
+						<form:input path="quantity" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="royalty">Royalty</label>
+					<label for="amount">Amount</label>
 					<div>
-						<form:input path="royalty" />
+						<form:input path="amount" readonly="true" />
 					</div>
-				</div>		
-					<div>
-						<form:button>Update Author Book Details</form:button>
-					</div>
+				</div>
 			</form:form>
 		</div>
 	</div>

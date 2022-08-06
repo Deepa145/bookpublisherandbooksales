@@ -6,16 +6,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Author Book Details</title>
+<title>Update Order Book Details</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="updateauthorbookdetail" method="post" modelAttribute="updateauthorbookdetails">
+			<form:form action="updateorderdetails" method="post" modelAttribute="updateorderbookdetails">
 				<div>
-					<label for="authorId">Author Id</label>
+					<label for="orderedId">Ordered Id</label>
 					<div>
-						<form:input path="authorId" />
+						<form:input path="orderedId" />
 					</div>
 				</div>
 				<div>
@@ -25,13 +25,19 @@
 					</div>
 				</div>
 				<div>
-					<label for="royalty">Royalty</label>
+					<label for="quantity">Quantity</label>
 					<div>
-						<form:input path="royalty" />
+						<form:input path="quantity" />
+					</div>
+				</div>		
+				<div>
+					<label for="amount">Amount</label>
+					<div>
+						<form:input path="amount" />
 					</div>
 				</div>		
 					<div>
-						<form:button>Update Author Book Details</form:button>
+						<form:button>Update Order Book Details</form:button>
 					</div>
 			</form:form>
 		</div>

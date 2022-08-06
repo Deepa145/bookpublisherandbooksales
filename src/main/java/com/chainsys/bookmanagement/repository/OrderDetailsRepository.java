@@ -1,17 +1,21 @@
 package com.chainsys.bookmanagement.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.bookmanagement.pojo.OrderDetails;
+import com.chainsys.bookmanagement.compositekey.OrderdDetailsCompositeKey;
+import com.chainsys.bookmanagement.model.AuthorBookDetails;
+import com.chainsys.bookmanagement.model.OrderDetails;
 
-public interface OrderDetailsRepository extends CrudRepository<OrderDetails,Integer> {
-	OrderDetails findById(int id);
+public interface OrderDetailsRepository extends CrudRepository<OrderDetails,OrderdDetailsCompositeKey> {
+	Optional<OrderDetails> findById(OrderdDetailsCompositeKey orderdDetailsCompositeKey);
+	
 	OrderDetails save(OrderDetails od);
 	    // Used for adding new Book
-	    void deleteById(int id);
+	    void deleteById(OrderdDetailsCompositeKey id);
 	    List<OrderDetails> findAll();
-	    
-	   // int getNextId();
+
+		List<OrderDetails> findByOrderedId(int id);
 }

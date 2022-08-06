@@ -19,7 +19,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="ahbk" items="${allauthorsbookdetails}">
+				<c:forEach var="ahbk" items="${allauthorbookdetails}">
 					<tr>
 						<td>${ahbk.authorId}</td>
 						<td>${ahbk.bookId}</td>

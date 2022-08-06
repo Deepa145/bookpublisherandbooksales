@@ -11,7 +11,7 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="updatebook" method="post" modelAttribute="updateauthor">
+			<form:form action="updateauthors" method="post" modelAttribute="updateauthor">
 				<div>
 					<label for="authorId">Author Id</label>
 					<div>
