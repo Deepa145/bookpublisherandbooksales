@@ -80,15 +80,6 @@ OrderdHistoryService orderdHistoryService;
 	    	return "list-orderdhistory-orderdetails";
 	    }
 	    
-//	    @GetMapping("/getorderidbyshopdetails")
-//	    public String getOrderidbyShopDetails(@RequestParam("orderid")int orderid,Model model)
-//	    {
-//	    	OrderDetailsDTO orderDetailsDTO=orderdHistoryService.getOrderHistoryAndOrderDetails(orderid);
-//	    	model.addAttribute("getorderhistory",orderDetailsDTO.getOrderedHistory());
-//	    	model.addAttribute("orderdetailslist",orderDetailsDTO.getOrderDetails());
-//	    	return "list-orderdhistory-orderdetails";
-//	    }
-	    
 	    @GetMapping("/getordershopdetails")
 	    public String getOrderShopDetails(@RequestParam("orderedid") int orderedid, Model model) {
 	        OrderedHistory orderedHistory = orderdHistoryService.findById(orderedid);

@@ -38,15 +38,6 @@ public class AuthorBookDetailsController {
 		return "list-authorbookdetails";
 	}
 
-	@GetMapping("/findauthorbookdetailsbyid")
-	public String findAuthorbookdetailsById(@RequestParam("bookid") int bookid, @RequestParam("authorid") int authorid,
-			Model model) {
-		AuthorBookDetailsCompositeKey authorBookDetailsCompositeKey = new AuthorBookDetailsCompositeKey(bookid,
-				authorid);
-		model.addAttribute("findauthorbookdetailsbyid", authorBookDetailsCompositeKey);
-		return "find-authorbookdetails-id-form";
-	}
-
 	@GetMapping("/addform")
 	public String showAddForm(Model model) {
 		List<AuthorBookDetails> allBooks = aubkservice.allBooks();
@@ -100,6 +91,17 @@ public class AuthorBookDetailsController {
 		model.addAttribute("fetchauthorsdetailsbyauthorandbookid",bookService.findById(authorBookDetailsCompositeKey.getBookId()));
 		
 		return "find-authorsdetails-by-author-book-id";
+	}
+	
+	
+	@GetMapping("/findauthorbookdetailsbyid")
+	public String findAuthorbookdetailsById(@RequestParam("bookid") int bookid, @RequestParam("authorid") int authorid,
+			Model model) {
+		AuthorBookDetailsCompositeKey authorBookDetailsCompositeKey = new AuthorBookDetailsCompositeKey(bookid,
+				authorid);
+		Optional<AuthorBookDetails> authorBookDetails=aubkservice.findById(authorBookDetailsCompositeKey);
+		model.addAttribute("findauthorbookdetailsbyid", authorBookDetails);
+		return "find-authorbookdetails-id-form";
 	}
 
 }

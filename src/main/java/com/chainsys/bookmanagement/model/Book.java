@@ -29,7 +29,7 @@ public class Book {
 	private int stockInHand;
 	@Column(name = "SALES")
 	private long sales;
-	
+	 
 	@OneToMany(mappedBy="book",fetch=FetchType.LAZY)
 	private List<AuthorBookDetails> authorBookDetails;
 

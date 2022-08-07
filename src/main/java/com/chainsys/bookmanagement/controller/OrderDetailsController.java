@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bookmanagement.compositekey.OrderdDetailsCompositeKey;
+import com.chainsys.bookmanagement.model.AuthorBookDetails;
 import com.chainsys.bookmanagement.model.OrderDetails;
 import com.chainsys.bookmanagement.service.OrderDetailsService;
 
@@ -32,7 +33,8 @@ public class OrderDetailsController {
 	 @GetMapping("/findorderbookdetailsbyid")
 	    public String findOrderBookDetailsById(@RequestParam("orderedid") int orderedid,@RequestParam("bookid")int bookid, Model model) {
 	        OrderdDetailsCompositeKey orderdDetailsCompositeKey = new OrderdDetailsCompositeKey(orderedid, bookid);
-	        model.addAttribute("findorderbookdetailsbyid", orderdDetailsCompositeKey);
+	        Optional<OrderDetails> theorder = orderDetailsService.findById(orderdDetailsCompositeKey);
+	        model.addAttribute("findorderbookdetailsbyid", theorder);
 	        return "find-orderbookdetails-id-form";
 	    }
 	    

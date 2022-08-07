@@ -27,8 +27,6 @@ public class AuthorBookDetails {
 	@Column(name = "ROYALTY")
 	private String royalty;
 
-	
-
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "BOOKID", nullable = false, insertable = false, updatable = false)
 	private Book book;
@@ -68,6 +66,7 @@ public class AuthorBookDetails {
 	public void setBookId(int bookId) {
 		this.bookId = bookId;
 	}
+
 	public String getRoyalty() {
 		return royalty;
 	}
@@ -76,4 +75,26 @@ public class AuthorBookDetails {
 		this.royalty = royalty;
 	}
 
+	public String toString() {
+		return String.format("%d,%d,%s", authorId, bookId, royalty);
+	}
+
+	public boolean equals(Object obj) {
+		boolean result = false;
+		if (obj == null) {
+			return false;
+		}
+		Class<? extends Object> c1 = obj.getClass();
+		if (c1 == this.getClass()) {
+			AuthorBookDetails other = (AuthorBookDetails) obj;
+			if (other.hashCode() == this.hashCode()) {
+				result = true;
+			}
+		}
+		return result;
+	}
+
+	public int hashCode() {
+		return this.authorId + this.bookId;
+	}
 }

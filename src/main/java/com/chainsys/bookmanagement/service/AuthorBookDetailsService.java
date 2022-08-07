@@ -20,12 +20,28 @@ public List<AuthorBookDetails> getAuthorBookDetails() {
     List<AuthorBookDetails> listAuthorbk =authorbookdetailsrepo.findAll();
     return listAuthorbk;
 }
+public List<AuthorBookDetails> getAuthorBookDetailsByBookId(int bookId) {
+    List<AuthorBookDetails> listAuthorbk =authorbookdetailsrepo.findByBookId(bookId);
+    System.out.println("debug : from AuthorBookDetailsService.getAuthorBookDetailsByBookId "+listAuthorbk.size());
+    return listAuthorbk;
+}
+public List<AuthorBookDetails> getAuthorBookDetailsByAuthorId(int authorId) {
+    List<AuthorBookDetails> listAuthorbk =authorbookdetailsrepo.findByAuthorId(authorId);
+    System.out.println("debug : from AuthorBookDetailsService.getAuthorBookDetailsByAuthorId "+listAuthorbk.size());
+    return listAuthorbk;
+}
 // @Transactional
 public AuthorBookDetails save(AuthorBookDetails aubk) {
     return authorbookdetailsrepo.save(aubk);
 }
+
 public Optional<AuthorBookDetails> findById(AuthorBookDetailsCompositeKey authorBookDetailsCompositeKey) {
-    return authorbookdetailsrepo.findById(authorBookDetailsCompositeKey);
+	Optional<AuthorBookDetails> foundDetails = authorbookdetailsrepo.findById(authorBookDetailsCompositeKey);
+    boolean flag = foundDetails.isPresent();
+    System.out.println("debug: from AuthorBookDetailsService.findById isPresent = " + flag);
+    flag =foundDetails.isEmpty();
+    System.out.println("debug: from AuthorBookDetailsService.findById isEmpty = " + flag);
+	return foundDetails;
 }
 //@Transactional
 public void deleteById(AuthorBookDetailsCompositeKey id) {

@@ -9,14 +9,14 @@ import com.chainsys.bookmanagement.compositekey.AuthorBookDetailsCompositeKey;
 import com.chainsys.bookmanagement.model.AuthorBookDetails;
 
 public interface AuthorBookDetailsRepository extends CrudRepository<AuthorBookDetails, AuthorBookDetailsCompositeKey> {
-	Optional<AuthorBookDetails> findById(AuthorBookDetailsCompositeKey authorBookDetailsCompositeKey);
 
 	AuthorBookDetails save(AuthorBookDetails abd);
 
-	// Used for adding new Boaok
+	// Used for adding new Book
 	void deleteById(AuthorBookDetailsCompositeKey id);
 
 	List<AuthorBookDetails> findAll();
 	
-	List<AuthorBookDetails> findByBookId(int id);
+	List<AuthorBookDetails> findByBookId(int bookId);
+	List<AuthorBookDetails> findByAuthorId(int authorId);
 }
