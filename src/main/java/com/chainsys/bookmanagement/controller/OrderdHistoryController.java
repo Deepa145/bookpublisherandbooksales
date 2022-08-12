@@ -2,9 +2,12 @@ package com.chainsys.bookmanagement.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,8 +35,13 @@ OrderdHistoryService orderdHistoryService;
 	        return "list-orderdhistory";
 	    }
 	 
+	 @GetMapping("/findorderhistoryform")
+		public String showOrderHistoryForm()
+		{
+			return "fetch-OrderHistory-form";
+		}
 	 @GetMapping("/findorderdhistoriessbyid")
-	    public String findOrderHistoriesById(@RequestParam("orderdhistoriesid") int orderdhistoriesid, Model model) {
+	    public String findOrderHistoriesById(int orderdhistoriesid, Model model) {
 	        OrderedHistory orderedHistory = orderdHistoryService.findById(orderdhistoriesid);
 	        model.addAttribute("findorderdhistoriessbyid", orderedHistory);
 	        return "find-orderdhistory-id-form";
@@ -48,7 +56,11 @@ OrderdHistoryService orderdHistoryService;
 	    
 	    @PostMapping("/add")
 	    // We need give from where to read data from the HTTP request and also the content type ("application/json")
-	    public String addNewOrderdHistory(@ModelAttribute("addorderdhistories") OrderedHistory orderedHistory) {
+	    public String addNewOrderdHistory(@Valid @ModelAttribute("addorderdhistories") OrderedHistory orderedHistory,Errors error) {
+	    	if(error.hasErrors())
+			{
+				return "add-orderdhistory-form";
+			}
 	    	orderdHistoryService.save(orderedHistory);
 	        return "redirect:/orderdhistory/orderdhistorylist";
 	    }
@@ -60,8 +72,12 @@ OrderdHistoryService orderdHistoryService;
 	        return "update-orderdhistoriess-form";
 	    }
 	    @PostMapping("/updateorderdhistories")
-	    public String UpdateOrderdHistories(@ModelAttribute("updateorderdhistories") OrderedHistory orderedHistory)
+	    public String UpdateOrderdHistories(@Valid @ModelAttribute("updateorderdhistories") OrderedHistory orderedHistory,Errors error)
 	    {
+	    	if(error.hasErrors())
+			{
+				return "update-orderdhistoriess-form";
+			}
 	    	orderdHistoryService.save(orderedHistory);
 	    	return "redirect:/orderdhistory/orderdhistorylist";
 	    }
@@ -71,8 +87,13 @@ OrderdHistoryService orderdHistoryService;
 	    	return "redirect:/orderdhistory/orderdhistorylist";
 	    }
 	    
+	    @GetMapping("/findorderhistorybyorderdetailsform")
+		public String showOrderHistoryByOrderDetailsForm()
+		{
+			return "fetch-order-history-by-order-details-form";
+		}
 	    @GetMapping("/getorderhistorybyorderdetails")
-	    public String getOrderDeatils(@RequestParam("orderid")int orderid,Model model)
+	    public String getOrderDeatils(int orderid,Model model)
 	    {
 	    	OrderDetailsDTO orderDetailsDTO=orderdHistoryService.getOrderHistoryAndOrderDetails(orderid);
 	    	model.addAttribute("getorderhistory",orderDetailsDTO.getOrderedHistory());
@@ -80,8 +101,13 @@ OrderdHistoryService orderdHistoryService;
 	    	return "list-orderdhistory-orderdetails";
 	    }
 	    
+	    @GetMapping("/findordershopdetailsform")
+		public String showFindForm()
+		{
+			return "fetch-ordershop-details-form";
+		}
 	    @GetMapping("/getordershopdetails")
-	    public String getOrderShopDetails(@RequestParam("orderedid") int orderedid, Model model) {
+	    public String getOrderShopDetails(int orderedid, Model model) {
 	        OrderedHistory orderedHistory = orderdHistoryService.findById(orderedid);
 	        model.addAttribute("fetchOrderHistoryByOrderId", orderedHistory);
 	        model.addAttribute("fetchShopDetailsById", shopService.findById(orderedHistory.getShopId()));

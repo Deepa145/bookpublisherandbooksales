@@ -7,10 +7,16 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Orderd History List</title>
+<style>
+.book{
+background-color: orange;
+}
+</style>
 </head>
 <body>
+<div class="book">
     <div id="table root">
-        <table>
+         <table border="2" width="100%" cellpadding="2">
             <thead>
                 <tr>
                     <th>Ordered Id</th>
@@ -18,6 +24,8 @@
                     <th>Shop Id</th>
                     <th>Ordered Date</th>
                      <th>Total Amount</th>
+                      <th>Edit</th>
+                       <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,10 +35,13 @@
                         <td>${orderdhistories.status}</td>
                         <td>${orderdhistories.shopId}</td>
                         <td>${orderdhistories.orderedDate}</td>
-                         <td>${orderdhistories.totalAmount}</td>                        
+                         <td>${orderdhistories.totalAmount}</td>
+                          <td><a href="updateorderdhistories?orderdhistoriesid=${orderdhistories.orderedId}">Edit</a></td>
+                           <td><a href="deleteorderdhistories?orderdhistoriesid=${orderdhistories.orderedId}">Delete</a></td>                        
                 </c:forEach>
             </tbody>
         </table>
+    </div>
     </div>
 </body>
 </html>

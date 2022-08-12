@@ -3,9 +3,12 @@ package com.chainsys.bookmanagement.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,8 +33,13 @@ public class OrderDetailsController {
 	        return "list-orderdetails";
 	    }
 	 
+	 @GetMapping("/findorderbookdetailsbyidform")
+		public String showOrderBookDetailsbyIdForm()
+		{
+			return "fetch-orderbookdetailsbyid-form";
+		}
 	 @GetMapping("/findorderbookdetailsbyid")
-	    public String findOrderBookDetailsById(@RequestParam("orderedid") int orderedid,@RequestParam("bookid")int bookid, Model model) {
+	    public String findOrderBookDetailsById(int orderedid,int bookid, Model model) {
 	        OrderdDetailsCompositeKey orderdDetailsCompositeKey = new OrderdDetailsCompositeKey(orderedid, bookid);
 	        Optional<OrderDetails> theorder = orderDetailsService.findById(orderdDetailsCompositeKey);
 	        model.addAttribute("findorderbookdetailsbyid", theorder);
@@ -49,13 +57,22 @@ public class OrderDetailsController {
 	    
 	    @PostMapping("/add")
 	    // We need give from where to read data from the HTTP request and also the content type ("application/json")
-	    public String addNewOrderDetails(@ModelAttribute("addorderDetails") OrderDetails orderDetails) {
+	    public String addNewOrderDetails(@Valid @ModelAttribute("addorderDetails") OrderDetails orderDetails,Errors error) {
+	    	if(error.hasErrors())
+			{
+				return "add-orderbookdetails-form";
+			}
 	    	orderDetailsService.save(orderDetails);
 	        return "redirect:/orderdetails/orderdetailslist";
 	    }
 	    
+	    @GetMapping("/updateorderdetailsform")
+		public String updateOrderDetailsForm()
+		{
+			return "update-order-details-form";
+		}
 	    @GetMapping("/updateorderdetails")
-	    public String showUpdateForm(@RequestParam("orderedid") int orderedid,@RequestParam("bookid")int bookid, Model model) {
+	    public String showUpdateForm(int orderedid,int bookid, Model model) {
 	        OrderdDetailsCompositeKey orderdDetailsCompositeKey = new OrderdDetailsCompositeKey(orderedid, bookid);
 	        Optional<OrderDetails> theorderdetails=orderDetailsService.findById(orderdDetailsCompositeKey);
 	        model.addAttribute("updateorderbookdetails", theorderdetails);
@@ -63,13 +80,22 @@ public class OrderDetailsController {
 	    }
 	    
 	    @PostMapping("/updateorderdetails")
-	    public String UpdateOrderDetails(@ModelAttribute("updateorderbookdetails") OrderDetails orderDetails)
+	    public String UpdateOrderDetails(@Valid @ModelAttribute("updateorderbookdetails") OrderDetails orderDetails,Errors error)
 	    {
+	    	if(error.hasErrors())
+			{
+				return "update-orderdetails-form";
+			}
 	    	orderDetailsService.save(orderDetails);
 	    	 return "redirect:/orderdetails/orderdetailslist";
 	    }
+	    @GetMapping("/deleteorderbookdetailsform")
+		public String deleteOrderBookDetailsForm()
+		{
+			return "delete-order-book-details-form";
+		}
 	    @GetMapping("/deleteorderbookdetails")
-	    public String deleteOrderDetails(@RequestParam("orderedid") int orderedid,@RequestParam("bookid")int bookid, Model model) {
+	    public String deleteOrderDetails( int orderedid,int bookid, Model model) {
 	    	OrderdDetailsCompositeKey orderdDetailsCompositeKey=new OrderdDetailsCompositeKey(orderedid, bookid);
 	    	orderDetailsService.deleteById(orderdDetailsCompositeKey);
 	    	 return "redirect:/orderdetails/orderdetailslist";

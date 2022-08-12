@@ -7,8 +7,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Book List</title>
+<style>
+.book{
+background-color: orange;
+}
+</style>
 </head>
 <body>
+<div class="book">
     <div id="table root">
         <table border="2" width="100%" cellpadding="2">
             <thead>
@@ -20,6 +26,8 @@
                     <th>Price</th>
                     <th>Stock In Hand</th>
                     <th>Sales</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,9 +40,12 @@
                         <td>${book.price}</td>
                         <td>${book.stockInHand}</td>
                         <td>${book.sales}</td>
+                        <td><a href="updatebooks?bookid=${book.bookId}">Edit</a></td>
+                        <td><a href="deletebook?bookid=${book.bookId}">Delete</a></td>
                 </c:forEach>
             </tbody>
         </table>
+    </div>
     </div>
 </body>
 </html>

@@ -9,6 +9,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Range;
 
 import com.chainsys.bookmanagement.compositekey.AuthorBookDetailsCompositeKey;
 
@@ -18,14 +23,17 @@ import com.chainsys.bookmanagement.compositekey.AuthorBookDetailsCompositeKey;
 public class AuthorBookDetails {
 	@Id
 	@Column(name = "AUTHORID")
+	@Min(value = 1,message ="*authorId shouldn't be null")
 	private int authorId;
 
 	@Id
 	@Column(name = "BOOKID")
+	@Min(value = 1,message ="*authorId shouldn't be null")
 	private int bookId;
 
 	@Column(name = "ROYALTY")
-	private String royalty;
+	@Range(min=(long) 10.0,message ="*price shouldn't be null")
+	private double royalty;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "BOOKID", nullable = false, insertable = false, updatable = false)
@@ -67,16 +75,18 @@ public class AuthorBookDetails {
 		this.bookId = bookId;
 	}
 
-	public String getRoyalty() {
+	
+
+	public double getRoyalty() {
 		return royalty;
 	}
 
-	public void setRoyalty(String royalty) {
+	public void setRoyalty(double royalty) {
 		this.royalty = royalty;
 	}
 
 	public String toString() {
-		return String.format("%d,%d,%s", authorId, bookId, royalty);
+		return String.format("%d,%d,%d", authorId, bookId, royalty);
 	}
 
 	public boolean equals(Object obj) {

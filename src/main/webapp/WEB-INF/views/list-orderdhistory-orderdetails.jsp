@@ -7,8 +7,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Book And Order Details List</title>
+<style>
+.book{
+background-color: orange;
+}
+</style>
 </head>
 <body>
+<div class="book">
 	<div id="root">
 		<div id="docform">
 			<form:form action="" method="post" modelAttribute="getorderhistory">
@@ -41,11 +47,14 @@
 					<div>
 						<form:input path="totalAmount" readonly="true" />
 					</div>
-				</div>				
+				</div>	
 			</form:form>
 		</div>
+		</div>
+		</div>
+		<div class="book">
 		<div id="OrderDetailslist">
-			<table>
+			<table border="2" width="100%" cellpadding="2">
 				<thead>
 					<tr>
 						<th>Ordered Id</th>

@@ -5,54 +5,99 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="shop")
+@Table(name = "shop")
 public class Shop {
 	@Id
-	@Column(name="SHOPID")
-private int shopId;
-	@Column(name="SHOPLOCATION")
-private String shopLocation;
-	@Column(name="CONTACTPERSON")
-private String contactPerson;
-	@Column(name="PHONENUMBER")
-private long phoneNumber;
-	
-	@OneToMany(mappedBy = "shop",fetch=FetchType.LAZY)
+	@Column(name = "SHOPID")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "shid")
+	@SequenceGenerator(name = "shid", sequenceName = "shid", allocationSize = 1)
+	private int shopId;
+	@Column(name = "SHOPLOCATION")
+	@NotBlank(message = "*shopLocation shouldn't be null")
+	private String shopLocation;
+	@Column(name = "CONTACTPERSON")
+	@Digits(integer = 10, fraction = 0)
+	private String contactPerson;
+	@Column(name = "PHONENUMBER")
+	@Digits(integer = 10, fraction = 0)
+	private long phoneNumber;
+
+	@OneToMany(mappedBy = "shop", fetch = FetchType.LAZY)
 	private List<OrderedHistory> orderedHistories;
-	
-public List<OrderedHistory> getOrderedHistories() {
+
+	public List<OrderedHistory> getOrderedHistories() {
 		return orderedHistories;
 	}
+
 	public void setOrderedHistories(List<OrderedHistory> orderedHistories) {
 		this.orderedHistories = orderedHistories;
 	}
-public int getShopId() {
-	return shopId;
-}
-public void setShopId(int shopId) {
-	this.shopId = shopId;
-}
-public String getShopLocation() {
-	return shopLocation;
-}
-public void setShopLocation(String shopLocation) {
-	this.shopLocation = shopLocation;
-}
-public String getContactPerson() {
-	return contactPerson;
-}
-public void setContactPerson(String contactPerson) {
-	this.contactPerson = contactPerson;
-}
-public long getPhoneNumber() {
-	return phoneNumber;
-}
-public void setPhoneNumber(long phoneNumber) {
-	this.phoneNumber = phoneNumber;
-}
+
+	public int getShopId() {
+		return shopId;
+	}
+
+	public void setShopId(int shopId) {
+		this.shopId = shopId;
+	}
+
+	public String getShopLocation() {
+		return shopLocation;
+	}
+
+	public void setShopLocation(String shopLocation) {
+		this.shopLocation = shopLocation;
+	}
+
+	public String getContactPerson() {
+		return contactPerson;
+	}
+
+	public void setContactPerson(String contactPerson) {
+		this.contactPerson = contactPerson;
+	}
+
+	public long getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String toString() {
+		return String.format("%d,%s,%d,%d", shopId, shopLocation, contactPerson, phoneNumber);
+	}
+
+	public boolean equals(Object obj) {
+		boolean result = false;
+		if (obj == null) {
+			return false;
+		}
+		Class<? extends Object> c1 = obj.getClass();
+		if (c1 == this.getClass()) {
+			Shop other = (Shop) obj;
+			if (other.hashCode() == this.hashCode()) {
+				result = true;
+			}
+		}
+		return result;
+	}
+
+	public int hashCode() {
+		return this.shopId;
+	}
+
 }

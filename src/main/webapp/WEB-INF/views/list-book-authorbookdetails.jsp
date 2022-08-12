@@ -7,8 +7,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Author and Authors Book List</title>
+<style>
+.book{
+background-color: orange;
+}
+</style>
 </head>
 <body>
+<div class="book">
 	<div id="root">
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getbook">
@@ -56,9 +62,11 @@
 				</div>
 			</form:form>
 		</div>
+		</div>
 	</div>
+	<div class="book">
 <div id="table root">
-		<table>
+		<table border="2" width="100%" cellpadding="2">
 			<thead>
 				<tr>
 					<th>Author Id</th>
@@ -75,6 +83,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
+	</div>
 	</div>
 </body>
 </html>

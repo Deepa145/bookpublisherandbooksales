@@ -1,14 +1,24 @@
 package com.chainsys.bookmanagement.model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Range;
+
 
 @Entity
 @Table(name ="book")
@@ -16,18 +26,25 @@ public class Book {
 	
 	@Id
 	@Column(name = "BOOKID")
-	private int bookId; // primary key
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "boid")
+    @SequenceGenerator(name = "boid", sequenceName = "boid",  allocationSize = 1)
+	private int bookId;
 	@Column(name = "BOOKNAME")
+	@Size(min=1,max=15,message ="*bookName shouldn't be null")
 	private String bookName;
 	@Column(name = "DATEOFPUBLISHING")
 	private Date dateOfPublishing;
 	@Column(name = "CATEGORY")
+	@Size(min=1,max=15,message ="*category shouldn't be null")
 	private String category;
 	@Column(name = "PRICE")
+	@Range(min=(long) 10.0,message ="*price shouldn't be null")
 	private double price;
 	@Column(name = "STOCKINHAND")
+    @Min(value=1, message=" stockInHand must be equal or greater than 18") 
 	private int stockInHand;
 	@Column(name = "SALES")
+	 @Min(value=1, message=" sales must be equal or greater than 18")
 	private long sales;
 	 
 	@OneToMany(mappedBy="book",fetch=FetchType.LAZY)
@@ -83,4 +100,28 @@ public class Book {
 	public void setSales(long sales) {
 		this.sales = sales;
 	}
+	
+	public String toString() {
+		return String.format("%d,%s,%s,%s,%d,%d,%d",bookId, bookName, dateOfPublishing, category,price,stockInHand,sales);
+	}
+
+	public boolean equals(Object obj) {
+		boolean result = false;
+		if (obj == null) {
+			return false;
+		}
+		Class<? extends Object> c1 = obj.getClass();
+		if (c1 == this.getClass()) {
+			Book other = (Book) obj;
+			if (other.hashCode() == this.hashCode()) {
+				result = true;
+			}
+		}
+		return result;
+	}
+
+	public int hashCode() {
+		return this.bookId;
+	}
+
 }

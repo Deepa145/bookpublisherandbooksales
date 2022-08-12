@@ -3,9 +3,12 @@ package com.chainsys.bookmanagement.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,7 +41,7 @@ public class AuthorBookDetailsController {
 		return "list-authorbookdetails";
 	}
 
-	@GetMapping("/addform")
+	@GetMapping("/addauthorbookdetails")
 	public String showAddForm(Model model) {
 		List<AuthorBookDetails> allBooks = aubkservice.allBooks();
 		model.addAttribute("allbooks", allBooks);
@@ -47,15 +50,22 @@ public class AuthorBookDetailsController {
 		return "add-authorbookdetails-form";
 	}
 
-	@PostMapping("/add") // We need give from where to read data from the HTTPrequest and also the
-							// content type ("application/json")
-	public String addNewAuthorBookDetails(@ModelAttribute("addauthorbookdetails") AuthorBookDetails aubk) {
+	@PostMapping("/add")
+	public String addNewAuthorBookDetails(@Valid @ModelAttribute("addauthorbookdetails") AuthorBookDetails aubk,Errors error) {
+		if(error.hasErrors())
+		{
+			return "add-authorbookdetails-form";
+		}
 		aubkservice.save(aubk);
 		return "redirect:/authorbookdetails/authorbookdetailslist";
 	}
-
-	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("bookid") int bookid, @RequestParam("authorid") int authorid,
+	@GetMapping("/updateauthordetailsbyauthorform")
+	public String updateAuthorBookForm()
+	{
+		return "update-author-book-details-by-author-form";
+	}
+	@GetMapping("/updateauthorbookdetails")
+	public String showUpdateForm(int bookid, int authorid,
 			Model model) {
 		AuthorBookDetailsCompositeKey authorBookDetailsCompositeKey = new AuthorBookDetailsCompositeKey(bookid,
 				authorid);
@@ -65,11 +75,20 @@ public class AuthorBookDetailsController {
 	}
 
 	@PostMapping("/updateauthorbookdetail")
-	public String UpdateAuthorBookDetails(@ModelAttribute("updateauthorbookdetails") AuthorBookDetails theauthorbk) {
+	public String UpdateAuthorBookDetails(@Valid @ModelAttribute("updateauthorbookdetails") AuthorBookDetails theauthorbk,Errors error) {
+		if(error.hasErrors())
+		{
+			return "update-authorbookdetails-form";
+		}
 		aubkservice.save(theauthorbk);
 		return "redirect:/authorbookdetails/authorbookdetailslist";
 	}
 
+	@GetMapping("/deleteauthordetailsbyauthorform")
+	public String deleteFindAuBookForm()
+	{
+		return "delete-author-book-details-by-author-form";
+	}
 	@GetMapping("/deleteauthorbookdetails")
 	public String deleteAuthorBookDetails(@RequestParam("bookid") int bookid, @RequestParam("authorid") int authorid,
 			Model model) {
@@ -78,7 +97,11 @@ public class AuthorBookDetailsController {
 		aubkservice.deleteById(authorBookDetailsCompositeKey);
 		return "redirect:/authorbookdetails/authorbookdetailslist";
 	}
-
+	@GetMapping("/findauthordetailsbyauthorform")
+	public String showFindAuBookForm()
+	{
+		return "fetch-author-book-details-by-author-form";
+	}
 	@GetMapping("/getauthorsdetailsbyauthorid")
 	public String getAuthorsDetailsbyAuthorId(@RequestParam("bookid") int bookid,
 			@RequestParam("authorid") int authorid, Model model) {
@@ -93,7 +116,11 @@ public class AuthorBookDetailsController {
 		return "find-authorsdetails-by-author-book-id";
 	}
 	
-	
+	@GetMapping("/findauthorbookdetailsform")
+	public String showFindForm()
+	{
+		return "fetch-author-book-details-form";
+	}
 	@GetMapping("/findauthorbookdetailsbyid")
 	public String findAuthorbookdetailsById(@RequestParam("bookid") int bookid, @RequestParam("authorid") int authorid,
 			Model model) {

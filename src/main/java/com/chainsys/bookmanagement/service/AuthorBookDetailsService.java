@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.chainsys.bookmanagement.compositekey.AuthorBookDetailsCompositeKey;
 import com.chainsys.bookmanagement.model.AuthorBookDetails;
-import com.chainsys.bookmanagement.model.Book;
 import com.chainsys.bookmanagement.repository.AuthorBookDetailsRepository;
 
 @Service
@@ -30,20 +29,14 @@ public List<AuthorBookDetails> getAuthorBookDetailsByAuthorId(int authorId) {
     System.out.println("debug : from AuthorBookDetailsService.getAuthorBookDetailsByAuthorId "+listAuthorbk.size());
     return listAuthorbk;
 }
-// @Transactional
 public AuthorBookDetails save(AuthorBookDetails aubk) {
     return authorbookdetailsrepo.save(aubk);
 }
 
 public Optional<AuthorBookDetails> findById(AuthorBookDetailsCompositeKey authorBookDetailsCompositeKey) {
 	Optional<AuthorBookDetails> foundDetails = authorbookdetailsrepo.findById(authorBookDetailsCompositeKey);
-    boolean flag = foundDetails.isPresent();
-    System.out.println("debug: from AuthorBookDetailsService.findById isPresent = " + flag);
-    flag =foundDetails.isEmpty();
-    System.out.println("debug: from AuthorBookDetailsService.findById isEmpty = " + flag);
 	return foundDetails;
 }
-//@Transactional
 public void deleteById(AuthorBookDetailsCompositeKey id) {
 	authorbookdetailsrepo.deleteById(id);
 }

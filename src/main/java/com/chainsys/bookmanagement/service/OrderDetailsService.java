@@ -14,6 +14,9 @@ import com.chainsys.bookmanagement.repository.OrderDetailsRepository;
 public class OrderDetailsService {
 @Autowired
 private OrderDetailsRepository orderDetailsRepository;
+@Autowired
+private BookService bookService;
+
 public List<OrderDetails> getallOrderDetails() {
     List<OrderDetails> listOrderDetails= orderDetailsRepository.findAll();
     return listOrderDetails;
@@ -21,6 +24,7 @@ public List<OrderDetails> getallOrderDetails() {
 // @Transactional
 public OrderDetails save(OrderDetails orderDetails) {
     return orderDetailsRepository.save(orderDetails);
+    
 }
 public Optional<OrderDetails> findById(OrderdDetailsCompositeKey orderdDetailsCompositeKey) {
     return orderDetailsRepository.findById(orderdDetailsCompositeKey);
@@ -35,4 +39,7 @@ public List<OrderDetails> allorderdHistory() {
 //public List<OrderDetails> allorderDetails() {
 //	return orderDetailsRepository.findAll();
 //}
+public List<OrderDetails>orderDetailsList(int id){
+	return orderDetailsRepository.findByOrderedId(id);
+}
 }
