@@ -22,7 +22,7 @@ body {
 	align-items: center;
 	height: 100vh;
 	margin: 0;
-	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVz3VtIJ5hXgZ8lAf2FmfZmhyTjhx6fSs8oQ&usqp=CAU');
+	background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
 }
 
 .container {
@@ -31,7 +31,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 5px;
+	border-radius: 219px;
 	box-shadow: 10px 20px 25px rgba(0, 0, 0, .3);
 	overflow: hidden;
 	max-width: 100%;
@@ -39,15 +39,15 @@ body {
 
 .header {
 	border-bottom: 1px solid #fofofo;
-	background-color: SlateBlue;
-	padding: 20px 40px
+	background-color:#bf9520;
+	padding: 99px 95px
 }
 
 .form {
-	background-color: SlateBlue;
+	background-color: #a1cd5a;
 	border: none;
 	border-radius: 2px;
-	margin-bottom: 12px;
+	margin-bottom: 28px;
 	overflow: hidden;
 	padding: 0 .625em;
 }
@@ -73,7 +73,7 @@ p {
 
 button {
 	text-align: center;
-}
+} 
 
 .text-danger {
 	color: #e80c4d;
@@ -93,29 +93,29 @@ button {
 						modelAttribute="addauthorbookdetails">
 						<div>
 							<label for="authorId">Author Id</label>
-							<div>
+							
 								<form:input path="authorId" placeholder="Author Id" 
 									id="authorId" pattern="^[0-9]*$"
 									title="authorId must have number" required="true" />
-							</div>
+							
 						</div>
 						<form:errors path="authorId" cssClass="text-danger" />
 						<div>
 							<label for="bookId">Book Id</label>
-							<div>
+						
 								<form:input path="bookId" placeholder="Book Id" id="bookId"
 									title="bookId must have number" pattern="^[0-9]*$"
 									required="true" />
-							</div>
+							
 						</div>
 						<form:errors path="bookId" cssClass="text-danger" />
 						<div>
 							<label for="royalty">Royalty</label>
-							<div>
+							
 								<form:input path="royalty" placeholder="Royalty" id="royalty"
 									title="royalty can't be empty or must contain only numbers"
 									 required="true" />
-							</div>
+							
 						</div>
 						<form:errors path="royalty" cssClass="text-danger" />
 						<div>

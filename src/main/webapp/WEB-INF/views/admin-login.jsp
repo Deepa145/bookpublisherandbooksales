@@ -14,7 +14,7 @@
 }
 
 body {
-	background-image: url("https://wallpaperaccess.com/full/1759701.jpg");
+	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDHW3omxQKj5ExTGM2arxDXME8v9uaNwlSUpSofUJ18aSdB1uszlfntIKGNZONY1fLWK8&usqp=CAU");
 	height: 768px;
 	width: 1366px;
 	background-position: center top;

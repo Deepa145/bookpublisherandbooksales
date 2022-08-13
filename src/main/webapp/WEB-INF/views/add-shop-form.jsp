@@ -22,7 +22,7 @@ align-items: center;
 height: 100vh;
 margin: 0;
 background-image:
-url('https://wallpaperaccess.com/full/1759701.jpg');
+url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
 }
 
 .container {
@@ -31,7 +31,7 @@ background-color: AntiqueWhite;
 display: flex;
 justify-content: center;
 align-items: center;
-border-radius: 5px;
+border-radius: 219px;
 box-shadow: 10px 20px 25px rgba(0, 0, 0, .3);
 overflow: hidden;
 max-width: 100%;
@@ -39,15 +39,15 @@ max-width: 100%;
 
 .header {
 border-bottom: 1px solid #fofofo;
-background-color: SlateBlue;
-padding: 20px 40px
+background-color: #bf9520;
+padding: 99px 95px
 }
 
 .form {
-background-color: SlateBlue;
+background-color: #a1cd5a;
 border: none;
 border-radius: 2px;
-margin-bottom: 12px;
+margin-bottom: 28px;
 overflow: hidden;
 padding: 0 .625em;
 }
@@ -92,26 +92,20 @@ font-size: 0.9em;
 			<form:form class="form" action="add" method="post" modelAttribute="addshops">
 				<div>
 					<label for="shopLocation">Shop Location</label>
-					<div>
 						<form:input path="shopLocation" placeholder="shopLocation" pattern="^[A-Za-z0-9._%+-]+$" title="Enter valid Location"
 									required="true"/>
-					</div>
 				</div>
 				<form:errors path="shopLocation" class="text-box" />
 				
 				<div>
 					<label for="contactPerson">Contact Person</label>
-					<div>
 						<form:input path="contactPerson" placeholder="contactPerson"/>
-					</div>
 				</div>
 				<form:errors path="contactPerson" class="text-box" />
 				
 				<div>
 					<label for="phoneNumber">Phone Number</label>
-					<div>
 						<form:input path="phoneNumber" placeholder="phoneNumber"/>
-					</div>
 				</div>	
 				<form:errors path="phoneNumber" class="text-box" />			
 					<div>

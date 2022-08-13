@@ -22,7 +22,7 @@ align-items: center;
 height: 100vh;
 margin: 0;
 background-image:
-url('https://wallpaperaccess.com/full/1759701.jpg');
+url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
 }
 
 .container {
@@ -31,7 +31,7 @@ background-color: AntiqueWhite;
 display: flex;
 justify-content: center;
 align-items: center;
-border-radius: 5px;
+border-radius: 219px;
 box-shadow: 10px 20px 25px rgba(0, 0, 0, .3);
 overflow: hidden;
 max-width: 100%;
@@ -39,15 +39,15 @@ max-width: 100%;
 
 .header {
 border-bottom: 1px solid #fofofo;
-background-color: SlateBlue;
-padding: 20px 40px
+background-color: #bf9520;
+padding: 99px 95px
 }
 
 .form {
-background-color: SlateBlue;
+background-color: #a1cd5a;
 border: none;
 border-radius: 2px;
-margin-bottom: 12px;
+margin-bottom: 28px;
 overflow: hidden;
 padding: 0 .625em;
 }
@@ -92,42 +92,32 @@ font-size: 0.9em;
 			<form:form class="form" action="add" method="post" modelAttribute="addorderdhistories">
 				<div>
 					<label for=orderedId>OrderedId</label>
-					<div>
 						<form:input path="orderedId" placeholder="orderedId"/>
-					</div>
 				</div>
 				<form:errors path="orderedId" caaClass="text-danger" />
 				
 				<div>
 					<label for="status">Status</label>
-					<div>
 						<form:input path="status" placeholder="status"/>
-					</div>
 				</div>
 				<form:errors path="status" caaClass="text-danger" />
 					
 				<div>
 					<label for="shopId">Shop Id</label>
-					<div>
 						<form:input path="shopId" placeholder="shopId" 
 required="true"/>
-					</div>
 				</div>
 				<form:errors path="shopId" cssClass="text-danger" />
 					
 				<div>
 					<label for="orderedDate">Ordered Date</label>
-					<div>
 						<form:input path="orderedDate" type="date" placeholder="orderedDate"/>
-					</div>
 				</div>
 				<form:errors path="orderedDate" cssClass="text-danger" />
 							
 				<div>
 					<label for="totalAmount">Total Amount</label>
-					<div>
 						<form:input path="totalAmount" placeholder="totalAmount"/>
-					</div>
 				</div>
 				<form:errors path="totalAmount" cssClass="text-danger" />				
 					<div>

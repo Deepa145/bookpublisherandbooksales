@@ -9,7 +9,7 @@
 <title>Books In stock</title>
 <style>
 body {
-	background-image: url("https://wallpaperaccess.com/full/1759701.jpg");
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg");
 	height: 768px;
 	width: 1366px;
 	background-position: center top;
@@ -95,6 +95,7 @@ tr:nth-child(odd) {
 h1 {
 	font-family: lucida Handwriting, Cursive;
 	color: white;
+	
 }
 
 .navbar {
@@ -117,7 +118,7 @@ h1 {
 }
 
 .dropdown .dropbtn {
-	font-size: 16px;
+	font-size: 27px;
 	border: none;
 	outline: none;
 	color: #000000;
@@ -147,6 +148,7 @@ h1 {
 	text-decoration: none;
 	display: block;
 	text-align: left;
+	background-color: FF00FF;
 }
 
 .dropdown-content a:hover {
@@ -155,11 +157,12 @@ h1 {
 
 .dropdown:hover .dropdown-content {
 	display: block;
+	background-color: FF00FF;
 }
 </style>
 </head>
 <body>
-	<h1 style="color: maroon;">Welcome to Book Sales and Book
+	<h1 style="color: #d555d1">Welcome to Book Sales and Book
 		Publishing !!!</h1>
 	<nav>
 		<ul>
@@ -223,7 +226,7 @@ h1 {
 					<a href="/orderdhistory/orderdhistorylist">Ordered History List</a>
 					<a href="/orderdhistory/addorderdhistory">Add Ordered History</a>
 					<a href="/orderdhistory/findorderhistoryform">View Ordered History</a>
-					<a href="/orderdhistory/findorderhistorybyorderdetailsform">View Order History</a>
+					<a href="/orderdhistory/findorderhistorybyorderdetailsform">View Order History With Order Details</a>
 				    <a href="/orderdhistory/findordershopdetailsform">View Ordered Shop Details</a>
 				</div>
 			</div>
@@ -241,7 +244,7 @@ h1 {
 
 		</ul>
 		<div id="table root">
-			<table style="width:70%">
+			<table border="2" width="100%" cellpadding="10">
 				<thead>
 					<tr>
 						<th>Author Id</th>

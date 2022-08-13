@@ -8,7 +8,7 @@
 <style>
 body {
 	background-image:
-		url("https://wallpapers.com/images/high/white-opened-book-with-marker-hm2gov19i85sqxaf.webp");
+		url("http://wallpapers.net/office-desk-hd-wallpaper/download/1366x768.jpg");
 	height: 768px;
 	width: 1366px;
 	background-position: center top;
@@ -28,10 +28,13 @@ body {
 .p{
 color:#00ffff;
 }
+.h1{
+color:white;
+}
 </style>
 </head>
 <body>
-	<h1 align="center">Author Book Publishing and Book Sales</h1>
+	<h1 style="color: #d555d1;" align="center">Author Book Publishing and Book Sales</h1>
 	<hr   />
 	<p>${message}</p>
 	<h3 align="center">

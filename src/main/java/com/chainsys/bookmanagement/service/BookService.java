@@ -30,6 +30,8 @@ public class BookService {
 	public Book save(Book book) {
 		return bookRepository.save(book);
 	}
+	
+	@Transactional
 	public Book addNewBook(Book book) {
 		book=bookRepository.save(book);
 		

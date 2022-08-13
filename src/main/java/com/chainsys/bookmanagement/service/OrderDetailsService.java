@@ -36,9 +36,6 @@ public void deleteById(OrderdDetailsCompositeKey id) {
 public List<OrderDetails> allorderdHistory() {
 	return orderDetailsRepository.findAll();
 }
-//public List<OrderDetails> allorderDetails() {
-//	return orderDetailsRepository.findAll();
-//}
 public List<OrderDetails>orderDetailsList(int id){
 	return orderDetailsRepository.findByOrderedId(id);
 }

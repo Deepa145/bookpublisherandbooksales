@@ -22,7 +22,7 @@ body {
 	align-items: center;
 	height: 100vh;
 	margin: 0;
-	background-image: url('https://wallpaperaccess.com/full/1759701.jpg');
+	background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
 }
 
 .container {
@@ -31,23 +31,23 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 5px;
+	border-radius: 219px;
 	box-shadow: 10px 20px 25px rgba(0, 0, 0, .3);
 	overflow: hidden;
-	max-width: 100%;
+	max-width: 40%;
 }
 
 .header {
 	border-bottom: 1px solid #fofofo;
-	background-color: SlateBlue;
-	padding: 20px 40px
+	background-color:#bf9520;
+	padding: 42px 186px
 }
 
 .form {
-	background-color: SlateBlue;
+	background-color: #a1cd5a;
 	border: none;
 	border-radius: 2px;
-	margin-bottom: 12px;
+	margin-bottom: 28px;
 	overflow: hidden;
 	padding: 0 .625em;
 }
@@ -73,7 +73,7 @@ p {
 
 button {
 	text-align: center;
-}
+} 
 
 .text-danger {
 	color: #e80c4d;
@@ -82,8 +82,11 @@ button {
 </style>
 </head>
 <body>
-	<div class="container" id="root">
+<div class="container" id="root">
 		<div class="header" id="form">
+<p>
+<button onclick="document.location='/webapp'">Back</button>
+</p> 
 			<div id="root">
 				<div id="form">
 					<form:form class="form" action="" method="post"

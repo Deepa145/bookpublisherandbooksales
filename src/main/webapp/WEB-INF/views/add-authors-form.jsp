@@ -22,7 +22,7 @@ body {
 	align-items: center;
 	height: 100vh;
 	margin: 0;
-	background-image: url('https://wallpaperaccess.com/full/1759701.jpg');
+	background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
 }
 
 .container {
@@ -31,7 +31,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 5px;
+	border-radius: 219px;
 	box-shadow: 10px 20px 25px rgba(0, 0, 0, .3);
 	overflow: hidden;
 	max-width: 100%;
@@ -39,15 +39,15 @@ body {
 
 .header {
 	border-bottom: 1px solid #fofofo;
-	background-color: SlateBlue;
-	padding: 20px 40px
+	background-color: #bf9520;
+	padding: 99px 95px
 }
 
 .form {
-	background-color: SlateBlue;
+	background-color: #a1cd5a;
 	border: none;
 	border-radius: 2px;
-	margin-bottom: 12px;
+	margin-bottom: 28px;
 	overflow: hidden;
 	padding: 0 .625em;
 }
@@ -93,44 +93,36 @@ button {
 				
 				<div>
 					<label for="authorName">Author Name</label>
-					<div>
+					
 						<form:input path="authorName" placeholder="Author Name" pattern="^[A-Za-z\s]*$" title="Enter valid Author Name"
 									required="true"/>
-					</div>
+					
 				</div>
 				<form:errors path="authorName" class="text-box" />
 				
 				<div>
 					<label for="authorAddress">Author Address</label>
-					<div>
 						<form:input path="authorAddress" placeholder="Author Address"/>
-					</div>
 				</div>
 				<form:errors path="authorAddress" class="text-box" />
 				
 				<div>
 					<label for="phoneNumber">Phone Number</label>
-					<div>
 						<form:input path="phoneNumber" placeholder="Phone Number" />
-					</div>
 				</div>
 				<form:errors path="phoneNumber" class="text-box" />
 				
 				<div>
 					<label for="email">Email</label>
-					<div>
 						<form:input path="email" placeholder="Email"/>
-					</div>
 				</div>
 				<form:errors path="email" class="text-box" />
 				
 				<div>
 					<label for="gender">Gender</label>
-					<div>
                         <form:radiobutton path="gender"  value="Male"/>Male
                             <form:radiobutton path="gender"  value="Female"/>Female
                             <form:radiobutton path="gender"  value="Transgender"/>Transgender
-                    </div>
 				</div>
 				<form:errors path="gender" class="text-box" />
 					<div>

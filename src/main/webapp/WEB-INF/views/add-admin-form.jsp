@@ -22,7 +22,7 @@ body {
 	align-items: center;
 	height: 100vh;
 	margin: 0;
-	background-image: url('https://wallpaperaccess.com/full/1759701.jpg');
+	background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
 }
 
 .container {
@@ -31,7 +31,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 5px;
+	border-radius: 219px;
 	box-shadow: 10px 20px 25px rgba(0, 0, 0, .3);
 	overflow: hidden;
 	max-width: 100%;
@@ -39,15 +39,15 @@ body {
 
 .header {
 	border-bottom: 1px solid #fofofo;
-	background-color: SlateBlue;
-	padding: 20px 40px
+	background-color: #bf9520;
+	padding: 99px 95px
 }
 
 .form {
-	background-color: SlateBlue;
+	background-color: #a1cd5a;
 	border: none;
 	border-radius: 2px;
-	margin-bottom: 12px;
+	margin-bottom: 28px;
 	overflow: hidden;
 	padding: 0 .625em;
 }
@@ -85,7 +85,7 @@ button {
 	<div class="container" id="root">
 		<div class="header" id="form">
 			<p>
-				<button onclick="document.location='/webapp'">Back</button>
+				<button onclick="document.location='/index'">Back</button>
 			</p>
 			<div id="root">
 				<div id="form">
@@ -93,22 +93,22 @@ button {
 						modelAttribute="addadmins">
 						<form:errors path="name" cssClass="text-danger" />
 						<div>
-							<label for="userName">UserName :</label>
-							<div>
+							<label for="userName">UserName </label>
+						
 								<form:input path="name" placeholder="User Name"
 									 pattern="^[A-Za-z\s]*$" title="Enter valid User Name"
 									required="true" />
-							</div>
+							
 						</div>
 						<form:errors path="password" cssClass="text-danger" />
 						<div>
-							<label for="passWord">Password :</label>
-							<div>
+							<label for="passWord">Password </label>
+							
 								<form:input path="password" placeholder="Password"
 									pattern="[a-zA-Z0-9._]+$"
 									title="Enter valid Password"
 									required="true" />
-							</div>
+						
 						</div>
 						<div>
 							<form:button>Add New admin</form:button>

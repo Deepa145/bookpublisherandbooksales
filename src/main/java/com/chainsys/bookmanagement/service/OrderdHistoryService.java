@@ -8,11 +8,13 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.chainsys.bookmanagement.model.Authors;
 import com.chainsys.bookmanagement.model.Book;
 import com.chainsys.bookmanagement.model.OrderDetails;
 import com.chainsys.bookmanagement.model.OrderDetailsDTO;
 import com.chainsys.bookmanagement.model.OrderedHistory;
 import com.chainsys.bookmanagement.model.Shop;
+import com.chainsys.bookmanagement.repository.AuthorsRepository;
 import com.chainsys.bookmanagement.repository.BookRepository;
 import com.chainsys.bookmanagement.repository.OrderDetailsRepository;
 import com.chainsys.bookmanagement.repository.OrderdHistoryRepository;
@@ -40,6 +42,16 @@ public List<OrderedHistory> getallOrderedHistory() {
 		}
 	    return orderdHistoryRepository.save(orderedHistory);
 	}
+	
+//	public Book addNewBook(Book bk) {
+//		List<OrderDetails>orderDetailsList=orderDetailsRepository.findByOrderedId(orderedHistory.getOrderedId());
+//		for(int i=0;i<orderDetailsList.size();i++) {
+//		Book book=bookRepository.findById(i)
+//		book=bookRepository.save(book);
+//		}
+//		return book;
+//	}
+	
 	public OrderedHistory findById(int id) {
 	    return orderdHistoryRepository.findById(id);
 	}

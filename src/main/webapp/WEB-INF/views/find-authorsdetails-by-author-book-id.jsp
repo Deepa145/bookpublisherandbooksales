@@ -12,185 +12,210 @@
 	color: #e80c4d;
 	font-size: 0.9em;
 }
+
 body {
-/* background-color: AntiqueWhite; */
-font-family: sans-serif;
-display: flex;
-text-align: left;
-justify-content: center;
-align-items: center;
-height: 100vh;
-margin: 0;
-background-image:
-url('https://wallpaperaccess.com/full/1759701.jpg');
+	/* background-color: AntiqueWhite; */
+	font-family: sans-serif;
+	display: flex;
+	text-align: left;
+	justify-content: center;
+	align-items: center;
+	height: 135vh;
+	margin: 0;
+	background-image:
+		url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
 }
 
 .container {
-display: inline-flex;
-background-color: AntiqueWhite;
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 5px;
-box-shadow: 10px 20px 25px rgba(0, 0, 0, .3);
-overflow: hidden;
-max-width: 100%;
+	display: inline-flex;
+	background-color: AntiqueWhite;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 219px;
+	box-shadow: 10px 20px 25px rgba(0, 0, 0, .3);
+	overflow: hidden;
+	max-width: 60%;
 }
 
 .header {
-border-bottom: 1px solid #fofofo;
-background-color: SlateBlue;
-padding: 20px 40px
+	border-bottom: 1px solid #fofofo;
+	background-color: #bf9520;
+	padding: 16px 300px
 }
 
 .form {
-background-color: SlateBlue;
-border: none;
-border-radius: 2px;
-margin-bottom: 12px;
-overflow: hidden;
-padding: 0 .625em;
+	background-color: #a1cd5a;
+	border: none;
+	border-radius: 2px;
+	margin-bottom: 28px;
+	overflow: hidden;
+	padding: 0 .625em;
 }
 
 .form label {
-cursor: pointer;
-display: inline-block;
-padding: 3px 6px;
-text-align: right;
-width: 150px;
-vertical-align: top;
+	cursor: pointer;
+	display: inline-block;
+	padding: 3px 6px;
+	text-align: right;
+	width: 150px;
+	vertical-align: top;
 }
 
 .form input {
-font-size: inherit;
-border-radious: 4px;
-padding: 8px;
+	font-size: inherit;
+	border-radious: 4px;
+	padding: 8px;
 }
 
 p {
-text-align: center;
+	text-align: center;
 }
 
 button {
-text-align: center;
+	text-align: center;
 }
 
 .text-danger {
-color: #e80c4d;
-font-size: 0.9em;
+	color: #e80c4d;
+	font-size: 0.9em;
+}
+
+.table {
+	border: 2px;
+	width: 100%;
+	cellpadding: 2px;
 }
 </style>
 </head>
 <body>
-	<div id="root">
-		<div id="form">
-		<table border="2" width="100%" cellpadding="2">
-			<form:form class="form" action="" method="post" modelAttribute="fetchaubk">
-				<div>
-					<label for="authorId">Author Id</label>
-					<div>
-						<form:input path="authorId" readonly="true" />
+	<!-- <div class="container" id="root">
+		<div class="header" id="form"> -->
+			<p>
+				<button onclick="document.location='/webapp'">Back</button>
+			</p>
+			<div id="root">
+				<div id="form">
+					<!-- <table class="table"> -->
+					<div class="container" id="root">
+					<div class="header" id="form">
+						<form:form class="form" action="" method="post"
+							modelAttribute="fetchaubk">
+							<div>
+								<label for="authorId">Author Id</label>
+								<div>
+									<form:input path="authorId" readonly="true" />
+								</div>
+							</div>
+							<div>
+								<label for="bookId">Book Id</label>
+								<div>
+									<form:input path="bookId" readonly="true" />
+								</div>
+							</div>
+							<div>
+								<label for="royalty">Royalty</label>
+								<div>
+									<form:input path="royalty" readonly="true" />
+								</div>
+							</div>
+						</form:form>
+				</div>
+			</div>
+			<!-- <table class="table"> -->
+				<div class="container" id="root">
+					<div class="header" id="form">
+						<form:form action="" method="post"
+							modelAttribute="fetchbookandauthorid">
+							<div>
+								<label for="authorId">Author Id</label>
+								<div>
+									<form:input path="authorId" readonly="true" />
+								</div>
+							</div>
+							<div>
+								<label for="authorName">Author Name</label>
+								<div>
+									<form:input path="authorName" readonly="true" />
+								</div>
+							</div>
+							<div>
+								<label for="authorAddress">Author Address</label>
+								<div>
+									<form:input path="authorAddress" readonly="true" />
+								</div>
+							</div>
+							<div>
+								<label for="phoneNumber">Phone Number</label>
+								<div>
+									<form:input path="phoneNumber" readonly="true" />
+								</div>
+							</div>
+							<div>
+								<label for="email">Email</label>
+								<div>
+									<form:input path="email" readonly="true" />
+								</div>
+							</div>
+							<div>
+								<label for="gender">Gender</label>
+								<div>
+									<form:input path="gender" readonly="true" />
+								</div>
+							</div>
+						</form:form>
 					</div>
 				</div>
-				<div>
-					<label for="bookId">Book Id</label>
-					<div>
-						<form:input path="bookId" readonly="true" />
-					</div>
+			<div class="container" id="root">
+				<div class="header" id="form">
+					<form:form action="" method="post"
+						modelAttribute="fetchauthorsdetailsbyauthorandbookid">
+						<div>
+							<label for="bookId">Book Id</label>
+							<div>
+								<form:input path="bookId" readonly="true" />
+							</div>
+						</div>
+						<div>
+							<label for="bookName">Book Name</label>
+							<div>
+								<form:input path="bookName" readonly="true" />
+							</div>
+						</div>
+						<div>
+							<label for="dateOfPublishing">Date Of Publishing</label>
+							<div>
+								<form:input path="dateOfPublishing" readonly="true" />
+							</div>
+						</div>
+						<div>
+							<label for="category">Category</label>
+							<div>
+								<form:input path="category" readonly="true" />
+							</div>
+						</div>
+						<div>
+							<label for="price">Price</label>
+							<div>
+								<form:input path="price" readonly="true" />
+							</div>
+						</div>
+						<div>
+							<label for="stockInHand">Stock In Hand</label>
+							<div>
+								<form:input path="stockInHand" readonly="true" />
+							</div>
+						</div>
+						<div>
+							<label for="sales">Sales</label>
+							<div>
+								<form:input path="sales" readonly="true" />
+							</div>
+						</div>
+					</form:form>
 				</div>
-				<div>
-					<label for="royalty">Royalty</label>
-					<div>
-						<form:input path="royalty" readonly="true" />
-					</div>
-				</div>
-			</form:form>
-			<table border="2" width="100%" cellpadding="2">
-			<form:form action="" method="post"
-				modelAttribute="fetchbookandauthorid">
-				<div>
-					<label for="authorId">Author Id</label>
-					<div>
-						<form:input path="authorId" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="authorName">Author Name</label>
-					<div>
-						<form:input path="authorName" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="authorAddress">Author Address</label>
-					<div>
-						<form:input path="authorAddress" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="phoneNumber">Phone Number</label>
-					<div>
-						<form:input path="phoneNumber" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="email">Email</label>
-					<div>
-						<form:input path="email" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="gender">Gender</label>
-					<div>
-						<form:input path="gender" readonly="true" />
-					</div>
-				</div>
-			</form:form>
-			<form:form action="" method="post"
-				modelAttribute="fetchauthorsdetailsbyauthorandbookid">
-				<div>
-					<label for="bookId">Book Id</label>
-					<div>
-						<form:input path="bookId" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="bookName">Book Name</label>
-					<div>
-						<form:input path="bookName" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="dateOfPublishing">Date Of Publishing</label>
-					<div>
-						<form:input path="dateOfPublishing" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="category">Category</label>
-					<div>
-						<form:input path="category" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="price">Price</label>
-					<div>
-						<form:input path="price" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="stockInHand">Stock In Hand</label>
-					<div>
-						<form:input path="stockInHand" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="sales">Sales</label>
-					<div>
-						<form:input path="sales" readonly="true" />
-					</div>
-				</div>
-			</form:form>
-		</div>
-	</div>
+			</div>
+			</div>
+			</div>
 </body>
 </html>
