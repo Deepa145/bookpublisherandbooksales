@@ -14,7 +14,9 @@
 }
 
 body {
-	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDHW3omxQKj5ExTGM2arxDXME8v9uaNwlSUpSofUJ18aSdB1uszlfntIKGNZONY1fLWK8&usqp=CAU");
+	background-image: url("https://img.wallpapersafari.com/desktop/1366/768/36/45/4gpaNx.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 768px;
 	width: 1366px;
 	background-position: center top;
@@ -193,8 +195,8 @@ ul li a:hover {
 	background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 50%,
 		rgba(0, 0, 0, 0.8) 50%);
 	position: absolute;
-	top: 117px;
-	left: 503px;
+	top: 134px;
+	left: 254px;
 	transform: translate(0%, -5%);
 	border-radius: 10px;
 	padding: 25px;

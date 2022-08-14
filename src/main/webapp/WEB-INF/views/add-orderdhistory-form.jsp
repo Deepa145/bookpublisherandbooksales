@@ -23,6 +23,8 @@ height: 100vh;
 margin: 0;
 background-image:
 url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
+background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .container {
@@ -90,12 +92,6 @@ font-size: 0.9em;
 	<div id="root">
 		<div id="form">
 			<form:form class="form" action="add" method="post" modelAttribute="addorderdhistories">
-				<div>
-					<label for=orderedId>OrderedId</label>
-						<form:input path="orderedId" placeholder="orderedId"/>
-				</div>
-				<form:errors path="orderedId" caaClass="text-danger" />
-				
 				<div>
 					<label for="status">Status</label>
 						<form:input path="status" placeholder="status"/>

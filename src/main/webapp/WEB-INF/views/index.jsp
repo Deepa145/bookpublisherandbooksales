@@ -9,10 +9,11 @@
 body {
 	background-image:
 		url("http://wallpapers.net/office-desk-hd-wallpaper/download/1366x768.jpg");
+		background-repeat: no-repeat;
+	background-size: cover;
 	height: 768px;
 	width: 1366px;
 	background-position: center top;
-	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
 }
@@ -34,7 +35,7 @@ color:white;
 </style>
 </head>
 <body>
-	<h1 style="color: #d555d1;" align="center">Author Book Publishing and Book Sales</h1>
+	<h1 style="color: #22dce5;" align="center">Author Book Publishing and Book Sales</h1>
 	<hr   />
 	<p>${message}</p>
 	<h3 align="center">

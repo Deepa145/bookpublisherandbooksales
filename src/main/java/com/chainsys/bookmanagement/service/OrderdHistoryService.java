@@ -32,26 +32,18 @@ public List<OrderedHistory> getallOrderedHistory() {
 	 List<OrderedHistory> orderedHistories = orderdHistoryRepository.findAll();
 	    return orderedHistories;
 	}
-	// @Transactional
-	public OrderedHistory save(OrderedHistory orderedHistory) {
-		List<OrderDetails>orderDetailsList=orderDetailsRepository.findByOrderedId(orderedHistory.getOrderedId());
-		for(int i=0;i<orderDetailsList.size();i++) {
-		    Book book= bookRepository.findById(orderDetailsList.get(i).getBookId());
-		    book.setStockInHand(book.getStockInHand()-orderDetailsList.get(i).getQuantity());
-		    bookRepository.save(book);
-		}
-	    return orderdHistoryRepository.save(orderedHistory);
-	}
-	
-//	public Book addNewBook(Book bk) {
+//	public OrderedHistory save(OrderedHistory orderedHistory) {
 //		List<OrderDetails>orderDetailsList=orderDetailsRepository.findByOrderedId(orderedHistory.getOrderedId());
 //		for(int i=0;i<orderDetailsList.size();i++) {
-//		Book book=bookRepository.findById(i)
-//		book=bookRepository.save(book);
+//		    Book book= bookRepository.findById(orderDetailsList.get(i).getBookId());
+//		    book.setStockInHand(book.getStockInHand()-orderDetailsList.get(i).getQuantity());
+//		    bookRepository.save(book);
 //		}
-//		return book;
+//	    return orderdHistoryRepository.save(orderedHistory);
 //	}
-	
+	public OrderedHistory save(OrderedHistory orderedHistory) {
+	    return orderdHistoryRepository.save(orderedHistory);
+	}
 	public OrderedHistory findById(int id) {
 	    return orderdHistoryRepository.findById(id);
 	}

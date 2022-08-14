@@ -34,7 +34,7 @@ public class OrderDetails {
 	@Min(value = 1,message ="*quantity shouldn't be null")
 	private int quantity;
 	@Column(name = "AMOUNT")
-	@Range(min=(long) 10.0,message ="*price shouldn't be null")
+	@Range(min=(long) 0.0,message ="*Amount shouldn't be less than 0")
 	private double amount;
 
 	@ManyToOne(fetch = FetchType.LAZY)

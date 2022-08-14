@@ -10,6 +10,8 @@
 <style>
 body {
 	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 768px;
 	width: 1366px;
 	background-position: center top;

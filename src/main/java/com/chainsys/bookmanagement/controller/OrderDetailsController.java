@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bookmanagement.compositekey.OrderdDetailsCompositeKey;
 import com.chainsys.bookmanagement.model.AuthorBookDetails;
+import com.chainsys.bookmanagement.model.Book;
 import com.chainsys.bookmanagement.model.OrderDetails;
+import com.chainsys.bookmanagement.service.BookService;
 import com.chainsys.bookmanagement.service.OrderDetailsService;
 
 
@@ -26,6 +29,8 @@ import com.chainsys.bookmanagement.service.OrderDetailsService;
 public class OrderDetailsController {
 	 @Autowired
 	private OrderDetailsService orderDetailsService;
+	 @Autowired
+	 private BookService bookService;
 	 @GetMapping("/orderdetailslist")
 	    public String getallOrderDetails(Model model) {
 	    	List<OrderDetails> allorderDetails = orderDetailsService.getallOrderDetails();
@@ -58,6 +63,19 @@ public class OrderDetailsController {
 	    @PostMapping("/add")
 	    // We need give from where to read data from the HTTP request and also the content type ("application/json")
 	    public String addNewOrderDetails(@Valid @ModelAttribute("addorderDetails") OrderDetails orderDetails,Errors error) {
+	    	int bookId=orderDetails.getBookId();
+	    	Book book=bookService.findById(bookId);
+	    	if(book==null)
+	    	{
+	    		System.out.println("Book is not Available");
+	    		return "";
+	    	}
+	    	double amount=orderDetails.getQuantity()*book.getPrice();
+	    	orderDetails.setAmount(amount);
+	    	List<ObjectError> errorlist=error.getAllErrors();
+	    	for (ObjectError objectError : errorlist) {
+				System.out.println("error: "+objectError.getDefaultMessage());
+			}
 	    	if(error.hasErrors())
 			{
 				return "add-orderbookdetails-form";

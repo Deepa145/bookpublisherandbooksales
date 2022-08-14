@@ -23,6 +23,8 @@ height: 100vh;
 margin: 0;
 background-image:
 url('https://wallpaperaccess.com/full/1759701.jpg');
+background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .container {
