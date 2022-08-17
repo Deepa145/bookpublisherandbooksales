@@ -13,8 +13,7 @@
 </head>
 <body>
 	<p>
-		<button
-			onclick="document.location='/authorbookdetails/findauthordetailsbyauthorform'">Back</button>
+		<button onclick="document.location='/authorbookdetails/findauthordetailsbyauthorform'">Back</button>
 	</p>
 	<div id="root">
 		<div id="form">
