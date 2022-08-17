@@ -19,16 +19,16 @@ import com.chainsys.bookmanagement.compositekey.AuthorBookDetailsCompositeKey;
 public class AuthorBookDetails {
 	@Id
 	@Column(name = "AUTHORID")
-	@Min(value = 1,message ="*authorId shouldn't be null")
+	@Min(value = 1, message = "*authorId shouldn't be null")
 	private int authorId;
 
 	@Id
 	@Column(name = "BOOKID")
-	@Min(value = 1,message ="*authorId shouldn't be null")
+	@Min(value = 1, message = "*authorId shouldn't be null")
 	private int bookId;
 
 	@Column(name = "ROYALTY")
-	@Range(min=(long) 10.0,message ="*price shouldn't be null")
+	@Range(min = (long) 10.0, message = "*price shouldn't be null")
 	private double royalty;
 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -71,8 +71,6 @@ public class AuthorBookDetails {
 		this.bookId = bookId;
 	}
 
-	
-
 	public double getRoyalty() {
 		return royalty;
 	}
@@ -83,24 +81,5 @@ public class AuthorBookDetails {
 
 	public String toString() {
 		return String.format("%d,%d,%d", authorId, bookId, royalty);
-	}
-
-	public boolean equals(Object obj) {
-		boolean result = false;
-		if (obj == null) {
-			return false;
-		}
-		Class<? extends Object> c1 = obj.getClass();
-		if (c1 == this.getClass()) {
-			AuthorBookDetails other = (AuthorBookDetails) obj;
-			if (other.hashCode() == this.hashCode()) {
-				result = true;
-			}
-		}
-		return result;
-	}
-
-	public int hashCode() {
-		return this.authorId + this.bookId;
 	}
 }

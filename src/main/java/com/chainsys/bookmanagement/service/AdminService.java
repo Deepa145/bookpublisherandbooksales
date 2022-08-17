@@ -21,8 +21,7 @@ public class AdminService {
 	}
 
 	public List<Admin> getAllAdmins() {
-		List <Admin> admin=(List<Admin>) adminRepository.findAll();
-		return admin;
+		return (List<Admin>) adminRepository.findAll();
 	}
 	
 }

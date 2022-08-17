@@ -78,26 +78,6 @@ public class Shop {
 	}
 
 	public String toString() {
-		return String.format("%d,%s,%d,%d", shopId, shopLocation, contactPerson, phoneNumber);
+		return String.format("%d,%s,%s,%d", shopId, shopLocation, contactPerson, phoneNumber);
 	}
-
-	public boolean equals(Object obj) {
-		boolean result = false;
-		if (obj == null) {
-			return false;
-		}
-		Class<? extends Object> c1 = obj.getClass();
-		if (c1 == this.getClass()) {
-			Shop other = (Shop) obj;
-			if (other.hashCode() == this.hashCode()) {
-				result = true;
-			}
-		}
-		return result;
-	}
-
-	public int hashCode() {
-		return this.shopId;
-	}
-
 }

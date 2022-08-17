@@ -81,23 +81,4 @@ public class OrderDetails {
 		return String.format("%d,%d,%d,%d",orderedId,bookId, quantity, amount);
 	}
 
-	public boolean equals(Object obj) {
-		boolean result = false;
-		if (obj == null) {
-			return false;
-		}
-		Class<? extends Object> c1 = obj.getClass();
-		if (c1 == this.getClass()) {
-			OrderDetails other = (OrderDetails) obj;
-			if (other.hashCode() == this.hashCode()) {
-				result = true;
-			}
-		}
-		return result;
-	}
-
-	public int hashCode() {
-		return this.bookId+this.orderedId;
-	}
-
 }

@@ -31,7 +31,7 @@ public class Authors {
 	@NotBlank(message = "*Name can't be Empty")
 	private String authorName;
 	@Column(name = "AUTHORADDRESS")
-	 @NotEmpty(message = "*Please enter Address")	
+	@NotEmpty(message = "*Please enter Address")
 	private String authorAddress;
 	@Column(name = "PHONENUMBER")
 	@Digits(integer = 10, fraction = 0)
@@ -41,7 +41,7 @@ public class Authors {
 	private String email;
 	@Column(name = "GENDER")
 	@NotEmpty(message = "*Please enter Gender")
-    @Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
+	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
 	private String gender;
 
 	@OneToMany(mappedBy = "authors", fetch = FetchType.LAZY)
@@ -102,28 +102,9 @@ public class Authors {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
+
 	public String toString() {
-		return String.format("%d,%s,%s,%d,%s,%s", authorId, authorName, authorAddress,phoneNumber,email,gender);
-	}
-
-	public boolean equals(Object obj) {
-		boolean result = false;
-		if (obj == null) {
-			return false;
-		}
-		Class<? extends Object> c1 = obj.getClass();
-		if (c1 == this.getClass()) {
-			Authors other = (Authors) obj;
-			if (other.hashCode() == this.hashCode()) {
-				result = true;
-			}
-		}
-		return result;
-	}
-
-	public int hashCode() {
-		return this.authorId;
+		return String.format("%d,%s,%s,%d,%s,%s", authorId, authorName, authorAddress, phoneNumber, email, gender);
 	}
 
 }

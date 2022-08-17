@@ -33,23 +33,8 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+ @Override
 	public String toString() {
 		return String.format("%s,%s", name, password);
-	}
-
-	public boolean equals(Object obj) {
-		boolean result = false;
-		if (obj == null) {
-			return false;
-		}
-		Class<? extends Object> c1 = obj.getClass();
-		if (c1 == this.getClass()) {
-			Admin other = (Admin) obj;
-			if (other.hashCode() == this.hashCode()) {
-				result = true;
-			}
-		}
-		return result;
 	}
 }

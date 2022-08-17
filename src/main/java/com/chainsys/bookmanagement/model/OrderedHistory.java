@@ -27,12 +27,12 @@ public class OrderedHistory {
 	@Column(name = "STATUS")
 	private String status;
 	@Column(name = "SHOPID")
-	@Min(value = 1,message="*value should be greater than 0")
+	@Min(value = 1, message = "*value should be greater than 0")
 	private int shopId;
 	@Column(name = "ORDEREDDATE")
 	private Date orderedDate;
 	@Column(name = "TOTALAMOUNT")
-	@Min(value = 0,message="*value should be greater than 0")
+	@Min(value = 0, message = "*value should be greater than 0")
 	private double totalAmount;
 
 	@OneToMany(mappedBy = "orderedHistory", fetch = FetchType.LAZY)
@@ -99,26 +99,7 @@ public class OrderedHistory {
 	}
 
 	public String toString() {
-		return String.format("%d,%s,%d,%s,%d",orderedId,status, shopId, orderedDate,totalAmount);
-	}
-
-	public boolean equals(Object obj) {
-		boolean result = false;
-		if (obj == null) {
-			return false;
-		}
-		Class<? extends Object> c1 = obj.getClass();
-		if (c1 == this.getClass()) {
-			OrderedHistory other = (OrderedHistory) obj;
-			if (other.hashCode() == this.hashCode()) {
-				result = true;
-			}
-		}
-		return result;
-	}
-
-	public int hashCode() {
-		return this.orderedId;
+		return String.format("%d,%s,%d,%s,%d", orderedId, status, shopId, orderedDate, totalAmount);
 	}
 
 }

@@ -80,7 +80,6 @@ public class BookController {
 
 	@GetMapping("/deletebook")
 	public String deleteAuthors(@RequestParam("bookid") int bookid) {
-		Book book = bkservice.findById(bookid);
 		bkservice.deleteById(bookid);
 		return "redirect:/book/booklist";
 	}
