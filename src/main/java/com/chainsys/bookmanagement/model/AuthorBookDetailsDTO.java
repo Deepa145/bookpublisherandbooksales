@@ -6,7 +6,7 @@ import java.util.List;
 public class AuthorBookDetailsDTO {
 	private Authors authors;
 	private Book book;
-	private List<AuthorBookDetails> authorBookDetails = new ArrayList<AuthorBookDetails>();
+	private List<AuthorBookDetails> authorBookDetails = new ArrayList<>();
 	
 	public Book getBook() {
 		return book;

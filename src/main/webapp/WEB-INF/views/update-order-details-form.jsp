@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Order Book Details Form</title>
@@ -12,7 +12,6 @@
 }
 
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -73,30 +72,39 @@ p {
 
 button {
 	text-align: center;
+	margin-left: 27px;
+	width: 100px;
+	height: 35px;
+	margin-top: 10px;
 } 
 
 .text-danger {
 	color: #e80c4d;
 	font-size: 0.9em;
 }
+h3{
+color: #c51515;
+text-align: center;
+}
 </style>
 </head>
 <body>
 <div class="container" id="root">
 		<div class="header" id="form">
-    <h3 style="color: #c51515">Update Order Book Details</h3>
+    <h3>Update sold Book </h3>
    <br>
     <form action="/orderdetails/updateorderdetails" method="get"
         style="margin: 0;">
         <div>
         <label>Enter Order Id</label> <input type="text"
-            placeholder="Order Id" name="orderedid"> 
+            placeholder="Order Id" type="number" name="orderedid" pattern="^[0-9]+$" required="true" > 
             </div>
             <div>
         <label>Enter Book Id</label> <input type="text" placeholder="Book Id"
-            name="bookid"> <input type='submit' value="Update" name="submit">
+            name="bookid" type="number" pattern="^[0-9]+$" required="true" > <input type='submit' value="Update" name="submit">
             </div>
     </form>
+    <button onclick="document.location='/bookAdmin/index'">Back</button>
 </div>
 </div>
 </body>

@@ -3,10 +3,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>View Author Book Details By BookId</title>
+<title>View Author Book Royalty</title>
 <style>
 .text-danger {
 	color: #e80c4d;
@@ -14,7 +14,6 @@
 }
 
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -75,7 +74,11 @@ p {
 
 button {
 	text-align: center;
-} 
+    margin-left: 70px;
+    width: 82px;
+    height: 46px;
+    margin-top: 0px;
+}
 
 .text-danger {
 	color: #e80c4d;
@@ -86,9 +89,6 @@ button {
 <body>
 <div class="container" id="root">
 <div class="header" id="form">
-<p>
-<button onclick="document.location='/webapp'">Back</button>
-</p> 
 	<div id="root">
 		<div id="form">
 			<form:form class="form" action="" method="post" modelAttribute="findauthorbookdetailsbyid">
@@ -105,6 +105,7 @@ button {
 						<form:input path="royalty" readonly="true"/>
 				</div>		
 			</form:form>
+			<button onclick="document.location='/authorbookdetails/findauthorbookdetailsform'">Back</button>
 		</div>
 	</div>
 	</div>

@@ -3,10 +3,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>User Login</title>
+<title>Admin Login</title>
 <style type="text/css">
 * {
 	margin: 0;
@@ -14,12 +14,10 @@
 }
 
 body {
-	background-image: url("https://img.wallpapersafari.com/desktop/1366/768/36/45/4gpaNx.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 768px;
+	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRppnuMxDC_Ehfrp766G659EJv0Iv2sb-0qeQ&usqp=CAU");
+	height: 690px;
 	width: 1366px;
-	background-position: center top;
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
@@ -192,11 +190,11 @@ ul li a:hover {
 .form {
 	width: 250px;
 	height: 380px;
-	background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 50%,
-		rgba(0, 0, 0, 0.8) 50%);
+	background: linear-gradient(to top, rgba(25 153 78 / 80%) 50%,
+		rgba(8 67 175 / 80%) 50%);
 	position: absolute;
 	top: 134px;
-	left: 254px;
+	left: 536px;
 	transform: translate(0%, -5%);
 	border-radius: 10px;
 	padding: 25px;
@@ -207,7 +205,7 @@ ul li a:hover {
 	width: 220px;
 	font-family: sans-serif;
 	text-align: center;
-	color: #ff7200;
+	color: #0a8546;
 	font-size: 22px;
 	background-color: #fff;
 	border-radius: 10px;
@@ -231,7 +229,7 @@ ul li a:hover {
 	width: 240px;
 	height: 35px;
 	background: transparent;
-	border-bottom: 1px solid #ff7200;
+	border-bottom: 1px solid #00ff7e;
 	border-top: none;
 	border-right: none;
 	border-left: none;
@@ -254,7 +252,7 @@ ul li a:hover {
 .btnn {
 	width: 240px;
 	height: 40px;
-	background: #ff7200;
+	background: #12225c;
 	border: none;
 	margin-top: 30px;
 	font-size: 22px;
@@ -299,7 +297,7 @@ ul li a:hover {
 	color: #fff;
 }
 .error{
-color:orange;
+color:#dd0d0d;
 }
 
 .icons ion-icon {
@@ -319,8 +317,6 @@ color:orange;
 }
 </style>
 </head>
-<body>
-<head>
 <body>
 	<div class="form">
 		<form:form action="checkadminlogin" method="post"

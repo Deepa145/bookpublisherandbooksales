@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Find Order History By Id</title>
+<title>Find OrderedHistory and Shop details</title>
 <style>
 .text-danger {
 	color: #e80c4d;
@@ -14,7 +14,6 @@
 }
 
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -22,7 +21,8 @@ body {
 	align-items: center;
 	height: 100vh;
 	margin: 0;
-	background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
+	background-image:
+		url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -41,7 +41,7 @@ body {
 
 .header {
 	border-bottom: 1px solid #fofofo;
-	background-color:#bf9520;
+	background-color: #bf9520;
 	padding: 42px 60px
 }
 
@@ -58,7 +58,7 @@ body {
 	cursor: pointer;
 	display: inline-block;
 	padding: 3px 6px;
-	text-align: right;
+	text-align: left;
 	width: 150px;
 	vertical-align: top;
 }
@@ -75,7 +75,7 @@ p {
 
 button {
 	text-align: center;
-} 
+}
 
 .text-danger {
 	color: #e80c4d;
@@ -84,50 +84,55 @@ button {
 </style>
 </head>
 <body>
-<div class="container" id="root">
+	<div class="container" id="root">
 		<div class="header" id="form">
-<p>
-<button onclick="document.location='/webapp'">Back</button>
-</p> 
-	<div id="root">
-		<div id="form">
-			<form:form class="form" action="" method="post" modelAttribute="fetchOrderHistoryByOrderId">
-				<div>
-					<label for="orderedId">Ordered Id</label>
-					<div>
-						<form:input path="orderedId" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="status">Status</label>
+			<p>
+				<button
+					onclick="document.location='/orderdhistory/findordershopdetailsform'">Back</button>
+			</p>
+			<div id="root">
+				<div id="form">
+					<form:form class="form" action="" method="post"
+						modelAttribute="fetchOrderHistoryByOrderId">
 						<div>
-							<form:input path="status" readonly="true" />
+							<label for="orderedId">Ordered Id</label>
+							<div>
+								<form:input path="orderedId" readonly="true" />
+							</div>
 						</div>
+						<div>
+							<label for="status">Status</label>
+							<div>
+								<form:input path="status" readonly="true" />
+							</div>
+						</div>
+						<div>
+							<label for="shopId">Shop Id</label>
+							<div>
+								<form:input path="shopId" readonly="true" />
+							</div>
+						</div>
+						<div>
+							<label for="orderedDate">Ordered Date</label>
+							<div>
+								<form:input path="orderedDate" readonly="true" />
+							</div>
+						</div>
+						<div>
+							<label for="totalAmount">TotalAmount</label>
+							<div>
+								<form:input path="totalAmount" readonly="true" />
+							</div>
+						</div>
+					</form:form>
 				</div>
-				<div>
-					<label for="shopId">Shop Id</label>
-					<div>
-						<form:input path="shopId" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="orderedDate">Ordered Date</label>
-					<div>
-						<form:input path="orderedDate" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="totalAmount">TotalAmount</label>
-					<div>
-						<form:input path="totalAmount" readonly="true" />
-					</div>
-				</div>
-			</form:form>
+			</div>
 		</div>
 	</div>
 	<div class="container" id="root">
 		<div class="header" id="form">
-	<form:form action="" method="post" modelAttribute="fetchShopDetailsById">
+			<form:form action="" method="post"
+				modelAttribute="fetchShopDetailsById">
 				<div>
 					<label for="shopId">Shop Id</label>
 					<div>
@@ -136,9 +141,9 @@ button {
 				</div>
 				<div>
 					<label for="shopLocation">Shop Location</label>
-						<div>
-							<form:input path="shopLocation" readonly="true" />
-						</div>
+					<div>
+						<form:input path="shopLocation" readonly="true" />
+					</div>
 				</div>
 				<div>
 					<label for="contactPerson">Contact Person</label>
@@ -153,7 +158,7 @@ button {
 					</div>
 				</div>
 			</form:form>
-			</div>
-			</div>
+		</div>
+	</div>
 </body>
 </html>

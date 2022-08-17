@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Order Book Details</title>
@@ -14,7 +14,6 @@
 }
 
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -58,7 +57,7 @@ body {
 	cursor: pointer;
 	display: inline-block;
 	padding: 3px 6px;
-	text-align: right;
+	text-align: left;
 	width: 150px;
 	vertical-align: top;
 }
@@ -75,7 +74,11 @@ p {
 
 button {
 	text-align: center;
-} 
+	margin-left: -10px;
+	width: 100px;
+	height: 35px;
+	margin-top: 10px;
+}
 
 .text-danger {
 	color: #e80c4d;
@@ -86,6 +89,9 @@ button {
 <body>
 <div class="container" id="root">
 <div class="header" id="form">
+<p>
+<button onclick="document.location='/orderdetails/updateorderdetailsform'">Back</button>
+</p>
 	<div id="root">
 		<div id="form">
 			<form:form class="form" action="updateorderdetails" method="post" modelAttribute="updateorderbookdetails">
@@ -93,7 +99,7 @@ button {
 				<div>
 					<label for="orderedId">Ordered Id</label>
 					<div>
-						<form:input path="orderedId" placeholder="orderedId" required="true"/>
+						<form:input path="orderedId" type="number" placeholder="orderedId" required="true"/>
 					</div>
 				</div>
 				<form:errors path="orderedId" class="text-box" />
@@ -101,7 +107,7 @@ button {
 				<div>
 					<label for="bookId">Book Id</label>
 					<div>
-						<form:input path="bookId" placeholder="bookId" required="true"/>
+						<form:input path="bookId" type="number" placeholder="bookId" required="true"/>
 					</div>
 				</div>
 				<form:errors path="bookId" class="text-box" />
@@ -109,7 +115,7 @@ button {
 				<div>
 					<label for="quantity">Quantity</label>
 					<div>
-						<form:input path="quantity" placeholder="quantity" required="true"/>
+						<form:input path="quantity" type="number" placeholder="quantity" required="true"/>
 					</div>
 				</div>
 				<form:errors path="quantity" class="text-box" />	
@@ -117,12 +123,12 @@ button {
 				<div>
 					<label for="amount">Amount</label>
 					<div>
-						<form:input path="amount" placeholder="amount" required="true"/>
+						<form:input path="amount" type="number" placeholder="amount" required="true"/>
 					</div>
 				</div>	
 				<form:errors path="amount" class="text-box" />	
 					<div>
-						<form:button>Update Order Book Details</form:button>
+						<form:button>Update Sold Book </form:button>
 					</div>
 			</form:form>
 		</div>

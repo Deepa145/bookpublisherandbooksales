@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bookmanagement.compositekey.OrderdDetailsCompositeKey;
-import com.chainsys.bookmanagement.model.AuthorBookDetails;
 import com.chainsys.bookmanagement.model.Book;
 import com.chainsys.bookmanagement.model.OrderDetails;
 import com.chainsys.bookmanagement.service.BookService;
@@ -67,15 +65,15 @@ public class OrderDetailsController {
 	    	Book book=bookService.findById(bookId);
 	    	if(book==null)
 	    	{
-	    		System.out.println("Book is not Available");
 	    		return "";
 	    	}
 	    	double amount=orderDetails.getQuantity()*book.getPrice();
 	    	orderDetails.setAmount(amount);
 	    	List<ObjectError> errorlist=error.getAllErrors();
-	    	for (ObjectError objectError : errorlist) {
-				System.out.println("error: "+objectError.getDefaultMessage());
-			}
+			/*
+			 * for (ObjectError objectError : errorlist) {
+			 * System.out.println("error: "+objectError.getDefaultMessage()); }
+			 */
 	    	if(error.hasErrors())
 			{
 				return "add-orderbookdetails-form";
@@ -98,7 +96,7 @@ public class OrderDetailsController {
 	    }
 	    
 	    @PostMapping("/updateorderdetails")
-	    public String UpdateOrderDetails(@Valid @ModelAttribute("updateorderbookdetails") OrderDetails orderDetails,Errors error)
+	    public String updateOrderDetails(@Valid @ModelAttribute("updateorderbookdetails") OrderDetails orderDetails,Errors error)
 	    {
 	    	if(error.hasErrors())
 			{

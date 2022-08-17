@@ -16,26 +16,20 @@ public class AuthorBookDetailsService {
 private AuthorBookDetailsRepository authorbookdetailsrepo;
 
 public List<AuthorBookDetails> getAuthorBookDetails() {
-    List<AuthorBookDetails> listAuthorbk =authorbookdetailsrepo.findAll();
-    return listAuthorbk;
+    return authorbookdetailsrepo.findAll();
 }
 public List<AuthorBookDetails> getAuthorBookDetailsByBookId(int bookId) {
-    List<AuthorBookDetails> listAuthorbk =authorbookdetailsrepo.findByBookId(bookId);
-    System.out.println("debug : from AuthorBookDetailsService.getAuthorBookDetailsByBookId "+listAuthorbk.size());
-    return listAuthorbk;
+    return authorbookdetailsrepo.findByBookId(bookId);
 }
 public List<AuthorBookDetails> getAuthorBookDetailsByAuthorId(int authorId) {
-    List<AuthorBookDetails> listAuthorbk =authorbookdetailsrepo.findByAuthorId(authorId);
-    System.out.println("debug : from AuthorBookDetailsService.getAuthorBookDetailsByAuthorId "+listAuthorbk.size());
-    return listAuthorbk;
+    return authorbookdetailsrepo.findByAuthorId(authorId);
 }
 public AuthorBookDetails save(AuthorBookDetails aubk) {
     return authorbookdetailsrepo.save(aubk);
 }
 
 public Optional<AuthorBookDetails> findById(AuthorBookDetailsCompositeKey authorBookDetailsCompositeKey) {
-	Optional<AuthorBookDetails> foundDetails = authorbookdetailsrepo.findById(authorBookDetailsCompositeKey);
-	return foundDetails;
+	return authorbookdetailsrepo.findById(authorBookDetailsCompositeKey);
 }
 public void deleteById(AuthorBookDetailsCompositeKey id) {
 	authorbookdetailsrepo.deleteById(id);

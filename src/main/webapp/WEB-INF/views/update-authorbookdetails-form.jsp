@@ -3,10 +3,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Author Book Details</title>
+<title>Update Author Book Royalty</title>
 <style>
 .text-danger {
 	color: #e80c4d;
@@ -14,7 +14,6 @@
 }
 
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -58,7 +57,7 @@ body {
 	cursor: pointer;
 	display: inline-block;
 	padding: 3px 6px;
-	text-align: right;
+	text-align: left;
 	width: 150px;
 	vertical-align: top;
 }
@@ -75,7 +74,11 @@ p {
 
 button {
 	text-align: center;
-} 
+	margin-left: 67px;
+	width: 101px;
+	height: 50px;
+	margin-top: 10px;
+}
 
 .text-danger {
 	color: #e80c4d;
@@ -93,7 +96,7 @@ button {
 				<div>
 					<label for="authorId">Author Id</label>
 					<div>
-						<form:input path="authorId" placeholder="authorId" required="true"/>
+						<form:input path="authorId" type="number" placeholder="authorId" required="true"/>
 					</div>
 				</div>
 				<form:errors path="authorId" cssClass="text-danger" />
@@ -101,7 +104,7 @@ button {
 				<div>
 					<label for="bookId">Book Id</label>
 					<div>
-						<form:input path="bookId" placeholder="bookId" required="true"/>
+						<form:input path="bookId" type="number" placeholder="bookId" required="true"/>
 					</div>
 				</div>
 				<form:errors path="bookId"  cssClass="text-danger" />
@@ -109,14 +112,15 @@ button {
 				<div>
 					<label for="royalty">Royalty</label>
 					<div>
-						<form:input path="royalty" placeholder="royalty" required="true"/>
+						<form:input path="royalty" type="number" placeholder="royalty" required="true"/>
 					</div>
 				</div>
 				<form:errors path="royalty"  cssClass="text-danger" />		
 					<div>
-						<form:button>Update Author Book Details</form:button>
+						<form:button>Update Author Book Royalty</form:button>
 					</div>
 			</form:form>
+			<button onclick="document.location='/authorbookdetails/updateauthordetailsbyauthorform'">Back</button>
 		</div>
 	</div>
 	</div>

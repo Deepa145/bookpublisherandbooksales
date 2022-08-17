@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bookmanagement.model.Authors;
-import com.chainsys.bookmanagement.model.Book;
 import com.chainsys.bookmanagement.service.AuthorsService;
 
 @Controller
@@ -50,12 +49,12 @@ public class AuthorsController {
 	    }
 	    
 	    @PostMapping("/add")
-	    public String addNewAuthor(@Valid @ModelAttribute("addauthors") Authors au,Errors error) {
+	    public String addNewAuthor(@Valid @ModelAttribute("addauthors") Authors authors,Errors error) {
 	    	
 	    	if(error.hasErrors())
 			{
 				return "add-authors-form";
-			}auservice.save(au);
+			}auservice.save(authors);
 	        return "redirect:/authors/authorslist";
 	    }
 	    
@@ -67,7 +66,7 @@ public class AuthorsController {
 	    }
 	    
 	    @PostMapping("/updateauthors")
-	    public String UpdateAuthors(@Valid @ModelAttribute("updateauthor") Authors theauthor,Errors error)
+	    public String updateAuthors(@Valid @ModelAttribute("updateauthor") Authors theauthor,Errors error)
 	    {
 	    	if(error.hasErrors())
 			{

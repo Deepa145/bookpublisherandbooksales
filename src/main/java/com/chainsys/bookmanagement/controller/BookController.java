@@ -69,7 +69,7 @@ public class BookController {
 	}
 
 	@PostMapping("/updatebook")
-	public String UpdateBooks(@Valid @ModelAttribute("updatebook") Book thebook, Errors error) {
+	public String updateBooks(@Valid @ModelAttribute("updatebook") Book thebook, Errors error) {
 		if(error.hasErrors())
 		{
 			return "update-book-form";

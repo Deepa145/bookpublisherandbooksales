@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Fetch Author Book Details By Id Form</title>
@@ -12,7 +12,6 @@
 }
 
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -56,7 +55,7 @@ body {
 	cursor: pointer;
 	display: inline-block;
 	padding: 3px 6px;
-	text-align: right;
+	text-align: left;
 	width: 150px;
 	vertical-align: top;
 }
@@ -73,33 +72,39 @@ p {
 
 button {
 	text-align: center;
-} 
+	margin-left: 66px;
+	width: 101px;
+	height: 50px;
+	margin-top: 10px;
+}
 
 .text-danger {
 	color: #e80c4d;
 	font-size: 0.9em;
+}
+h3{
+color: #c51515;
+text-align: center;
 }
 </style>
 </head>
 <body>
 <div class="container" id="root">
 		<div class="header" id="form">
-<p>
-<button onclick="document.location='/webapp'">Back</button>
-</p> 
-    <h3 style="color: #c51515">View Author Book Details Book</h3>
+    <h3>View Author,Book and Royalty Details</h3>
    <br>
     <form class="form" action="/authorbookdetails/getauthorsdetailsbyauthorid" method="get"
         style="margin: 0;">
         <div>
         <label>Enter Book Id</label> <input type="text"
-            placeholder="Book Id" name="bookid"> 
+            placeholder="Book Id" name="bookid" pattern="^[0-9]+$" required="true" > 
             </div>
             <div>
         <label>Enter Author Id</label> <input type="text" placeholder="Author Id"
-            name="authorid"> <input type='submit' value="Fetch" name="submit">
+            name="authorid" required="true" pattern="^[0-9]+$"> <input type='submit' value="View" name="submit">
             </div>
     </form>
+    <button onclick="document.location='/bookAdmin/index'">Back</button>
 </div>
 </div>
 </body>

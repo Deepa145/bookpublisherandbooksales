@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>User Fetch Form</title>
+<title>Order History Form</title>
 <style>
 .text-danger {
 	color: #e80c4d;
@@ -12,7 +12,6 @@
 }
 
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -73,29 +72,34 @@ p {
 
 button {
 	text-align: center;
-} 
-
+	margin-left: 61px;
+	width: 100px;
+	height: 35px;
+	margin-top: 10px;
+}
 .text-danger {
 	color: #e80c4d;
 	font-size: 0.9em;
+}
+h3{
+color: #c51515;
+text-align: center;
 }
 </style>
 </head>
 <body>
 <div class="container" id="root">
 		<div class="header" id="form">
-<p>
-<button onclick="document.location='/webapp'">Back</button>
-</p> 
-    <h3 style="color: #c51515">View Order History Details</h3>
+    <h3>View Ordered History Details</h3>
     <br>
     <form class="form" action="/orderdhistory/findorderdhistoriessbyid" method="get"
         style="margin: 0;">
         <div>
-        <label>Enter Order Id </label> <input type="text" placeholder="Ordered Histories Id"
-            name="orderdhistoriesid"> <input type='submit' value="fetch" name="submit">
+        <label>Enter Order Id </label> <input type="text" placeholder="Ordered History Id"
+            name="orderdhistoriesid" pattern="^[0-9]+$" required="true"> <input type='submit' value="View" name="submit">
             </div>
     </form>
+    <button onclick="document.location='/bookAdmin/index'">Back</button>
 </div>
 </div>
 </body>

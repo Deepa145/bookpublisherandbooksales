@@ -14,7 +14,6 @@
 }
 
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -75,6 +74,10 @@ p {
 
 button {
 	text-align: center;
+	margin-left: 6px;
+	width: 100px;
+	height: 35px;
+	margin-top: 10px;
 } 
 
 .text-danger {
@@ -87,7 +90,7 @@ button {
 <div class="container" id="root">
 		<div class="header" id="form">
 <p>
-<button onclick="document.location='/webapp'">Back</button>
+<button onclick="document.location='/book/findbookform'">Back</button>
 </p> 
 			<div id="root">
 				<div id="form">

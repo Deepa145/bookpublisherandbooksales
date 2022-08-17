@@ -1,6 +1,5 @@
 package com.chainsys.bookmanagement.commonutil;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Pattern;
 
@@ -22,8 +21,6 @@ public class Validator {
 				throw new InvalidInputDataException("The value in String must contain only numbers");
 		}
 
-		// if data is invalid throw new InvalidInputDataException ("The value in String
-		// must contain only numbers")
 		return result;
 	}
 	public static boolean checkStringForParseFloat(String data) throws InvalidInputDataException {
@@ -38,8 +35,6 @@ public class Validator {
 				throw new InvalidInputDataException("The value in String must contain only numbers");
 		}
 
-		// if data is invalid throw new InvalidInputDataException ("The value in String
-		// must contain only numbers")
 		return result;
 	}
 
@@ -79,7 +74,6 @@ public class Validator {
 	}
 
 	public static boolean checkMail(String email) throws InvalidInputDataException {
-		// TODO
 		boolean result = false;
 		String regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
 				+ "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
@@ -97,8 +91,6 @@ public class Validator {
 		boolean result = false;
 		int len = data.length();
 		String[] data1 = data.split("/");
-		//for (int i = 0; i < data1.length; i++)
-			//System.out.println(data1[i]);
 		int date = Integer.parseInt(data1[0]);
 		int mon = Integer.parseInt(data1[1]);
 		int yrs = Integer.parseInt(data1[2]);
@@ -108,8 +100,6 @@ public class Validator {
 				throw new InvalidInputDataException("Enter date in correct format ");
 		}
 
-		// TODO
-		// date before 1/1/1985
 
 		if (yrs > 1984 && yrs <= 2022) {
 			if (mon == 1 || mon == 3 || mon == 5 || mon == 7 || mon == 8 || mon == 10 || mon == 12)
@@ -133,7 +123,6 @@ public class Validator {
 	}
 
 	public static boolean CheckNofutureDate(Date date) throws InvalidInputDataException {
-//		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		Date dateA = new Date();
 		boolean result = false;
 	if( date.compareTo(dateA)<0 )
@@ -141,11 +130,9 @@ public class Validator {
 	else
 		throw new InvalidInputDataException("enter valid date");
 		return result;
-//		String testDate = formatter.format(date);
 	}
 
 	public static boolean checkjob(String data) throws InvalidInputDataException {
-		// TODO Auto-generated method stub
 		boolean result = false;
 		int len = data.length();
 		for (int index = 0; index < len; index++) {
@@ -165,7 +152,6 @@ public class Validator {
 	
 
 	public static boolean checkSalLimit(float data) throws InvalidInputDataException {
-		// TODO Auto-generated method stub
 		boolean result = false;
 		if (data < 1000)
 			throw new InvalidInputDataException("Enter Amount above 1,000 ");
@@ -220,7 +206,6 @@ public class Validator {
 	}
 	public static boolean checkexist(String id) {
 		return false;
-		//TODO to check already exist or not
 	}
 
 }

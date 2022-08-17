@@ -6,10 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.bookmanagement.model.Admin;
-import com.chainsys.bookmanagement.model.Book;
 import com.chainsys.bookmanagement.repository.AdminRepository;
 
-import oracle.security.o3logon.a;
 @Service
 public class AdminService {
 	@Autowired

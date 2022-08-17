@@ -12,9 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "shop")
@@ -28,7 +27,8 @@ public class Shop {
 	@NotBlank(message = "*shopLocation shouldn't be null")
 	private String shopLocation;
 	@Column(name = "CONTACTPERSON")
-	@Digits(integer = 10, fraction = 0)
+	@Size(max = 20, min = 3)
+	@NotBlank(message = "*Name can't be Empty")
 	private String contactPerson;
 	@Column(name = "PHONENUMBER")
 	@Digits(integer = 10, fraction = 0)

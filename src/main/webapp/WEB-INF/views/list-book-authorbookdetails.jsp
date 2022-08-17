@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Author and Authors Book List</title>
@@ -13,7 +13,7 @@
 	font-size: 0.9em;
 }
 .book{
-background-color: #466ec9;
+background-color: #9ad571;
 }
 body {
 	/* background-color: AntiqueWhite; */
@@ -60,7 +60,7 @@ body {
 	cursor: pointer;
 	display: inline-block;
 	padding: 3px 6px;
-	text-align: right;
+	text-align: left;
 	width: 150px;
 	vertical-align: top;
 }
@@ -77,11 +77,19 @@ p {
 
 button {
 	text-align: center;
+	margin-left: 4px;
+	width: 93px;
+	height: 35px;
+	margin-top: 10px;
 } 
 
 .text-danger {
 	color: #e80c4d;
 	font-size: 0.9em;
+}
+table, th, td{
+border: 2px solid black;
+height: 40px;
 }
 </style>
 </head>
@@ -89,7 +97,7 @@ button {
 <div class="container" id="root">
 		<div class="header" id="form">
 <p>
-<button onclick="document.location='/webapp'">Back</button>
+<button onclick="document.location='/book/getbookform'">Back</button>
 </p> 
 <div class="book">
 	<div id="root">
@@ -145,7 +153,7 @@ button {
 	</div>
 	<div class="book">
 <div id="table root">
-		<table  border="2" width="100%" cellpadding="2">
+		<table class="tb">
 			<thead>
 				<tr>
 					<th>Author Id</th>

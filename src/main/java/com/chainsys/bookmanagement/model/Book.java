@@ -13,8 +13,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Range;
@@ -38,7 +36,7 @@ public class Book {
 	@Size(min=1,max=15,message ="*category shouldn't be null")
 	private String category;
 	@Column(name = "PRICE")
-	@Range(min=(long) 10.0,message ="*price shouldn't be null")
+	@Range(min=(long) 0.0,message ="*price shouldn't be null")
 	private double price;
 	@Column(name = "STOCKINHAND")
     @Min(value=1, message=" stockInHand must be equal or greater than 18") 

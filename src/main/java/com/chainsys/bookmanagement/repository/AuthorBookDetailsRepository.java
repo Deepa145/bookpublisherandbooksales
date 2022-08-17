@@ -1,7 +1,6 @@
 package com.chainsys.bookmanagement.repository;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -12,7 +11,6 @@ public interface AuthorBookDetailsRepository extends CrudRepository<AuthorBookDe
 
 	AuthorBookDetails save(AuthorBookDetails abd);
 
-	// Used for adding new Book
 	void deleteById(AuthorBookDetailsCompositeKey id);
 
 	List<AuthorBookDetails> findAll();

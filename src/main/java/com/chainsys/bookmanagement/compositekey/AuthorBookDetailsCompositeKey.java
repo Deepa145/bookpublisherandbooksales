@@ -4,16 +4,13 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Column;
-
-import com.chainsys.bookmanagement.model.AuthorBookDetails;
-
 public class AuthorBookDetailsCompositeKey implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Column(name = "AUTHORID")
-	private int authorId; // Foreign key
+	private int authorId;
 	@Column(name = "BOOKID")
-	private int bookId; // Foreign key
+	private int bookId; 
 
 
 	public AuthorBookDetailsCompositeKey() {

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>User Fetch Form</title>
@@ -20,7 +20,8 @@ body {
 	align-items: center;
 	height: 100vh;
 	margin: 0;
-	background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
+	background-image:
+		url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -39,7 +40,7 @@ body {
 
 .header {
 	border-bottom: 1px solid #fofofo;
-	background-color:#bf9520;
+	background-color: #bf9520;
 	padding: 42px 186px
 }
 
@@ -53,12 +54,9 @@ body {
 }
 
 .form label {
-	cursor: pointer;
 	display: inline-block;
-	padding: 3px 6px;
-	text-align: right;
 	width: 150px;
-	vertical-align: top;
+	float: left;
 }
 
 .form input {
@@ -73,7 +71,17 @@ p {
 
 button {
 	text-align: center;
-} 
+	margin-left: 70px;
+	width: 100px;
+	height: 35px;
+	margin-top: 10px;
+}
+
+h3 {
+	color: #c51515;
+	text-align: center;
+	margin-top: 5px;
+}
 
 .text-danger {
 	color: #e80c4d;
@@ -82,21 +90,20 @@ button {
 </style>
 </head>
 <body>
-<div class="container" id="root">
+	<div class="container" id="root">
 		<div class="header" id="form">
-<p>
-<button onclick="document.location='/webapp'">Back</button>
-</p> 
-    <h3 style="color: #c51515">View Book Details</h3>
-    <br>
-    <form class="form" action="/book/findbookbyid" method="get"
-        style="margin: 0;">
-        <div>
-        <label>Enter id </label> <input type="text" placeholder="book id"
-            name="bookid"> <input type='submit' value="fetch" name="submit">
-            </div>
-    </form>
-</div>
-</div>
+			<h3>View Book Details</h3>
+			<br>
+			<form class="form" action="/book/findbookbyid" method="get"
+				style="margin: 0;">
+				<div>
+					<label>Enter id </label> <input type="text" placeholder="book id"
+						pattern="^[0-9]+$" name="bookid" required="true"> <input
+						type='submit' value="View" name="submit">
+				</div>
+			</form>
+			<button onclick="document.location='/bookAdmin/index'">Back</button>
+		</div>
+	</div>
 </body>
 </html>

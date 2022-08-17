@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Shop By Id</title>
@@ -14,7 +14,6 @@
 }
 
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -58,7 +57,7 @@ body {
 	cursor: pointer;
 	display: inline-block;
 	padding: 3px 6px;
-	text-align: right;
+	text-align: left;
 	width: 150px;
 	vertical-align: top;
 }
@@ -75,7 +74,7 @@ p {
 
 button {
 	text-align: center;
-} 
+}
 
 .text-danger {
 	color: #e80c4d;
@@ -87,7 +86,7 @@ button {
 <div class="container" id="root">
 		<div class="header" id="form">
 <p>
-<button onclick="document.location='/webapp'">Back</button>
+<button onclick="document.location='/shop/findshopform'">Back</button>
 </p> 
 	<div id="root">
 		<div id="form">

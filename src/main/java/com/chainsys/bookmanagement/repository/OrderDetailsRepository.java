@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.bookmanagement.compositekey.OrderdDetailsCompositeKey;
-import com.chainsys.bookmanagement.model.AuthorBookDetails;
 import com.chainsys.bookmanagement.model.OrderDetails;
 
 public interface OrderDetailsRepository extends CrudRepository<OrderDetails,OrderdDetailsCompositeKey> {

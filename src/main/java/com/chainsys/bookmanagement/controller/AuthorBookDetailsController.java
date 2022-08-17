@@ -17,9 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bookmanagement.compositekey.AuthorBookDetailsCompositeKey;
 import com.chainsys.bookmanagement.model.AuthorBookDetails;
-import com.chainsys.bookmanagement.model.AuthorBookDetailsDTO;
-import com.chainsys.bookmanagement.model.Authors;
-import com.chainsys.bookmanagement.model.Book;
 import com.chainsys.bookmanagement.service.AuthorBookDetailsService;
 import com.chainsys.bookmanagement.service.AuthorsService;
 import com.chainsys.bookmanagement.service.BookService;
@@ -75,7 +72,7 @@ public class AuthorBookDetailsController {
 	}
 
 	@PostMapping("/updateauthorbookdetail")
-	public String UpdateAuthorBookDetails(@Valid @ModelAttribute("updateauthorbookdetails") AuthorBookDetails theauthorbk,Errors error) {
+	public String updateAuthorBookDetails(@Valid @ModelAttribute("updateauthorbookdetails") AuthorBookDetails theauthorbk,Errors error) {
 		if(error.hasErrors())
 		{
 			return "update-authorbookdetails-form";

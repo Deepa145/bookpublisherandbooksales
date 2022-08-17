@@ -1,9 +1,6 @@
 package com.chainsys.bookmanagement.controller;
 
 import java.util.List;
-
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,14 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bookmanagement.model.Admin;
 import com.chainsys.bookmanagement.model.AuthorBookDetails;
-import com.chainsys.bookmanagement.model.Book;
 import com.chainsys.bookmanagement.service.AdminService;
 import com.chainsys.bookmanagement.service.AuthorBookDetailsService;
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 @Controller
 @RequestMapping("/bookAdmin")

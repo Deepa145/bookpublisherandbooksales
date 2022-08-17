@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Author By Id</title>
@@ -14,7 +14,6 @@
 }
 
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -24,7 +23,7 @@ body {
 	margin: 0;
 	background-image:
 		url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
-		background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	background-size: cover;
 }
 
@@ -76,6 +75,10 @@ p {
 
 button {
 	text-align: center;
+	margin-left: 279px;
+	width: 101px;
+	height: 50px;
+	margin-top: 10px;
 }
 
 .text-danger {
@@ -91,83 +94,80 @@ button {
 </style>
 </head>
 <body>
-	<!-- <div class="container" id="root">
-		<div class="header" id="form"> -->
-			<p>
-				<button onclick="document.location='/webapp'">Back</button>
-			</p>
-			<div id="root">
-				<div id="form">
-					<!-- <table class="table"> -->
-					<div class="container" id="root">
-					<div class="header" id="form">
-						<form:form class="form" action="" method="post"
-							modelAttribute="fetchaubk">
+	<p>
+		<button
+			onclick="document.location='/authorbookdetails/findauthordetailsbyauthorform'">Back</button>
+	</p>
+	<div id="root">
+		<div id="form">
+			<div class="container" id="root">
+				<div class="header" id="form">
+					<form:form class="form" action="" method="post"
+						modelAttribute="fetchaubk">
+						<div>
+							<label for="authorId">Author Id</label>
 							<div>
-								<label for="authorId">Author Id</label>
-								<div>
-									<form:input path="authorId" readonly="true" />
-								</div>
+								<form:input path="authorId" readonly="true" />
 							</div>
+						</div>
+						<div>
+							<label for="bookId">Book Id</label>
 							<div>
-								<label for="bookId">Book Id</label>
-								<div>
-									<form:input path="bookId" readonly="true" />
-								</div>
+								<form:input path="bookId" readonly="true" />
 							</div>
+						</div>
+						<div>
+							<label for="royalty">Royalty</label>
 							<div>
-								<label for="royalty">Royalty</label>
-								<div>
-									<form:input path="royalty" readonly="true" />
-								</div>
+								<form:input path="royalty" readonly="true" />
 							</div>
-						</form:form>
+						</div>
+					</form:form>
 				</div>
 			</div>
-			<!-- <table class="table"> -->
-				<div class="container" id="root">
-					<div class="header" id="form">
-						<form:form action="" method="post"
-							modelAttribute="fetchbookandauthorid">
+			<div class="container" id="root">
+				<div class="header" id="form">
+					<form:form action="" method="post"
+						modelAttribute="fetchbookandauthorid">
+						<div>
+							<label for="authorId">Author Id</label>
 							<div>
-								<label for="authorId">Author Id</label>
-								<div>
-									<form:input path="authorId" readonly="true" />
-								</div>
+								<form:input path="authorId" readonly="true" />
 							</div>
+						</div>
+						<div>
+							<label for="authorName">Author Name</label>
 							<div>
-								<label for="authorName">Author Name</label>
-								<div>
-									<form:input path="authorName" readonly="true" />
-								</div>
+								<form:input path="authorName" readonly="true" />
 							</div>
+						</div>
+						<div>
+							<label for="authorAddress">Author Address</label>
 							<div>
-								<label for="authorAddress">Author Address</label>
-								<div>
-									<form:input path="authorAddress" readonly="true" />
-								</div>
+								<form:input path="authorAddress" readonly="true" />
 							</div>
+						</div>
+						<div>
+							<label for="phoneNumber">Phone Number</label>
 							<div>
-								<label for="phoneNumber">Phone Number</label>
-								<div>
-									<form:input path="phoneNumber" readonly="true" />
-								</div>
+								<form:input path="phoneNumber" readonly="true" />
 							</div>
+						</div>
+						<div>
+							<label for="email">Email</label>
 							<div>
-								<label for="email">Email</label>
-								<div>
-									<form:input path="email" readonly="true" />
-								</div>
+								<form:input path="email" readonly="true" />
 							</div>
+						</div>
+						<div>
+							<label for="gender">Gender</label>
 							<div>
-								<label for="gender">Gender</label>
-								<div>
-									<form:input path="gender" readonly="true" />
-								</div>
+								<form:input path="gender" readonly="true" />
 							</div>
-						</form:form>
-					</div>
+						</div>
+					</form:form>
 				</div>
+			</div>
 			<div class="container" id="root">
 				<div class="header" id="form">
 					<form:form action="" method="post"
@@ -217,7 +217,7 @@ button {
 					</form:form>
 				</div>
 			</div>
-			</div>
-			</div>
+		</div>
+	</div>
 </body>
 </html>

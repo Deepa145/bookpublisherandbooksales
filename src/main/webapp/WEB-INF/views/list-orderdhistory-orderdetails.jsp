@@ -3,20 +3,19 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Book And Order Details List</title>
+<title>OrderHistory and Sold Book Details</title>
 <style>
 .text-danger {
 	color: #e80c4d;
 	font-size: 0.9em;
 }
 .book{
-background-color: #466ec9;
+background-color: #9ad571;
 }
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -60,7 +59,7 @@ body {
 	cursor: pointer;
 	display: inline-block;
 	padding: 3px 6px;
-	text-align: right;
+	text-align: left;
 	width: 150px;
 	vertical-align: top;
 }
@@ -83,13 +82,16 @@ button {
 	color: #e80c4d;
 	font-size: 0.9em;
 }
+table, th, td{
+border: 2px solid black;
+height: 40px;
 </style>
 </head>
 <body>
 <div class="container" id="root">
 		<div class="header" id="form">
 <p>
-<button onclick="document.location='/webapp'">Back</button>
+<button onclick="document.location='/orderdhistory/findorderhistorybyorderdetailsform'">Back</button>
 </p> 
 <div class="book">
 	<div id="root">
@@ -133,7 +135,7 @@ button {
 		</div>
 		<div class="book">
 		<div id="OrderDetailslist">
-			<table border="2" width="100%" cellpadding="2">
+			<table class="tb">
 				<thead>
 					<tr>
 						<th>Ordered Id</th>

@@ -22,21 +22,21 @@ private BookService bookService;
 private OrderdHistoryService orderdHistoryService;
 
 public List<OrderDetails> getallOrderDetails() {
-    List<OrderDetails> listOrderDetails= orderDetailsRepository.findAll();
-    return listOrderDetails;
+    return orderDetailsRepository.findAll();
 }
-// @Transactional
 public OrderDetails save(OrderDetails orderDetails) {
 	orderDetails=orderDetailsRepository.save(orderDetails);
 	int bookId=orderDetails.getBookId();
 	Book book=bookService.findById(bookId);
 	if(book==null)
 	{
-		System.out.println("Book is not Available");
 		return null;
 	}
 	int currentStock=book.getStockInHand()-orderDetails.getQuantity();
 	book.setStockInHand(currentStock);
+	bookService.save(book);
+	long currentSale=orderDetails.getQuantity()+book.getSales();
+	book.setSales(currentSale);
 	bookService.save(book);
 	OrderedHistory orderedHistory=orderdHistoryService.findById(orderDetails.getOrderedId());
 	double orderAmount=orderedHistory.getTotalAmount()+orderDetails.getAmount();

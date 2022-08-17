@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Order Book Details By Id</title>
@@ -14,7 +14,6 @@
 }
 
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -75,8 +74,11 @@ p {
 
 button {
 	text-align: center;
-} 
-
+	margin-left: 60px;
+	width: 100px;
+	height: 35px;
+	margin-top: 10px;
+}
 .text-danger {
 	color: #e80c4d;
 	font-size: 0.9em;
@@ -86,9 +88,6 @@ button {
 <body>
 <div class="container" id="root">
 		<div class="header" id="form">
-<p>
-<button onclick="document.location='/webapp'">Back</button>
-</p> 
 	<div id="root">
 		<div id="form">
 			<form:form class="form" action="" method="post" modelAttribute="findorderbookdetailsbyid">
@@ -117,6 +116,7 @@ button {
 					</div>
 				</div>
 			</form:form>
+			<button onclick="document.location='/orderdetails/findorderbookdetailsbyidform'">Back</button>
 		</div>
 	</div>
 	</div>

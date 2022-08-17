@@ -23,8 +23,7 @@ public class BookService {
 	private AuthorsRepository authorsRepository;
 	
 	public List<Book> getallBooks() {
-		List<Book> listBook = bookRepository.findAll();
-		return listBook;
+		return bookRepository.findAll();
 	}
 
 	public Book save(Book book) {
@@ -58,7 +57,7 @@ public class BookService {
 		List<AuthorBookDetails> authorBookDetails = authorBookDetailsRepository.findByBookId(id);
 		Iterator<AuthorBookDetails> itr = authorBookDetails.iterator();
 		while (itr.hasNext()) {
-			authorBookDetailsDTO.addAuthorBookDetails((AuthorBookDetails) itr.next());
+			authorBookDetailsDTO.addAuthorBookDetails(itr.next());
 		}
 		return authorBookDetailsDTO;
 	}

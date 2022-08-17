@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.bookmanagement.model.OrderDetails;
 import com.chainsys.bookmanagement.model.OrderDetailsDTO;
 import com.chainsys.bookmanagement.model.OrderedHistory;
-import com.chainsys.bookmanagement.service.OrderDetailsService;
 import com.chainsys.bookmanagement.service.OrderdHistoryService;
 import com.chainsys.bookmanagement.service.ShopService;
 
@@ -72,7 +70,7 @@ OrderdHistoryService orderdHistoryService;
 	        return "update-orderdhistoriess-form";
 	    }
 	    @PostMapping("/updateorderdhistories")
-	    public String UpdateOrderdHistories(@Valid @ModelAttribute("updateorderdhistories") OrderedHistory orderedHistory,Errors error)
+	    public String updateOrderdHistories(@Valid @ModelAttribute("updateorderdhistories") OrderedHistory orderedHistory,Errors error)
 	    {
 	    	if(error.hasErrors())
 			{

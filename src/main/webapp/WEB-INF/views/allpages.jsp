@@ -3,13 +3,14 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Books In stock</title>
 <style>
 body {
-	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg");
+	background-image:
+		url("https://us.123rf.com/450wm/wamsler/wamsler1408/wamsler140800080/30944287-rij-van-boeken-grungy-achtergrond-gratis-exemplaar-ruimte.jpg?ver=6");
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 768px;
@@ -32,7 +33,7 @@ h2 {
 }
 
 nav {
-	background-color: Orange;
+	background-color: #0ab57a;
 	height: 50px;
 	padding: 0;
 	margin: 0;
@@ -65,10 +66,10 @@ li:hover {
 }
 
 table {
-	margin-top: 25px;
+	margin-top: 33px;
 	margin-left: auto;
 	margin-right: auto;
-	width: 100%;
+	width: 70%;
 }
 
 td, th {
@@ -85,19 +86,18 @@ th {
 	background-color: #d68989;
 }
 
-tr:nth-child(odd) {
-	background-color: #ecc0c0;
+tr {
+	background-color: #dcc0ec;
 }
 
-	a {
-		text-decoration: none;
-		font-size: 20px;
-	}
+a {
+	text-decoration: none;
+	font-size: 20px;
+}
 
 h1 {
 	font-family: lucida Handwriting, Cursive;
 	color: white;
-	
 }
 
 .navbar {
@@ -117,10 +117,11 @@ h1 {
 .dropdown {
 	float: left;
 	overflow: hidden;
+	color: blue;
 }
 
 .dropdown .dropbtn {
-	font-size: 27px;
+	font-size: 23px;
 	border: none;
 	outline: none;
 	color: #000000;
@@ -131,7 +132,7 @@ h1 {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-	background-color: #fa6e6e;
+	background-color: #a8a3dd;
 }
 
 .dropdown-content {
@@ -161,86 +162,93 @@ h1 {
 	display: block;
 	background-color: FF00FF;
 }
+
+en {
+	color: blue;
+}
 </style>
 </head>
 <body>
-	<h1 style="color: #d555d1">Welcome to Book Sales and Book
+	<h1 style="color: #bb0e0e">Welcome to Book Sales and Book
 		Publishing !!!</h1>
 	<nav>
 		<ul>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Book Details <i class="fa fa-caret-down"></i>
+					All Books Details <em class="fa fa-caret-down"></em>
 				</button>
 				<div class="dropdown-content">
-					<a href="/book/booklist">All Book List</a>
-					 <a href="/book/addbook">Add New Book</a>
-					 <a href="/book/findbookform">View a Book</a> 
-					 <a href="/book/getbookform">View Book Details By Author</a>
+					<a href="/book/booklist">Available Book List</a> <a
+						href="/book/addbook">Add New Book</a> <a href="/book/findbookform">View
+						Specific Book Details</a> <a href="/book/getbookform">View Book
+						and Author's Book Royalty Details</a>
 				</div>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Author Details <i class="fa fa-caret-down"></i>
+					All Authors Details <em class="fa fa-caret-down"></em>
 				</button>
 				<div class="dropdown-content">
-					<a href="/authors/authorslist">Authors List In Book</a>
-					<a href="/authors/addauthor">Add New Author</a>
-					<a	href="/authors/findauthorform">View Author's Details</a>
+					<a href="/authors/authorslist">Authors List</a> <a
+						href="/authors/addauthor">Add New Author</a> <a
+						href="/authors/findauthorform">View Specific Author Details</a>
 				</div>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Author Book Details <i class="fa fa-caret-down"></i>
+					All Authors Royalty Details <em class="fa fa-caret-down"></em>
 				</button>
 				<div class="dropdown-content">
 					<a href="/authorbookdetails/authorbookdetailslist">Author's
-						Book Details List</a> <a
-						href="/authorbookdetails/addauthorbookdetails">Add New
-						Author's Book details</a> <a
+						Royalty List</a> <a href="/authorbookdetails/addauthorbookdetails">Add
+						New Royalty for Authors</a> <a
 						href="/authorbookdetails/findauthorbookdetailsform">View
-						Author's Book Details</a> <a
-						href="/authorbookdetails/deleteauthordetailsbyauthorform">Delete
-						Author's Book Details</a> <a
+						Author Royalty for Book</a> <a
+						href="/authorbookdetails/deleteauthordetailsbyauthorform">Remove
+						Author Book Royalty</a> <a
 						href="/authorbookdetails/updateauthordetailsbyauthorform">Update
-						Author's Book Details</a> <a
+						Author Book Royalty</a> <a
 						href="/authorbookdetails/findauthordetailsbyauthorform">View
-						Author's Details</a>
+						Author,Book and Royalty Details</a>
 				</div>
 			</div>
- <div class="dropdown">
-				<button class="dropbtn">
-					Order Details <i class="fa fa-caret-down"></i>
-				</button>
-				<div class="dropdown-content">
-<a href="/orderdetails/orderdetailslist">Ordered Details List</a>
-<a href="/orderdetails/addorderdetails">Add Ordered Details</a>
-<a href="/orderdetails/findorderbookdetailsbyidform">View Ordered Book Details</a>
-<a href="/orderdetails/updateorderdetailsform">Update Order Book Details</a>
-<a href="/orderdetails/deleteorderbookdetailsform">Delete Order Book Details</a>
-</div>
-</div>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Order History Details <i class="fa fa-caret-down"></i>
+					Sell Book Details <em class="fa fa-caret-down"></em>
 				</button>
 				<div class="dropdown-content">
-					<a href="/orderdhistory/orderdhistorylist">Ordered History List</a>
-					<a href="/orderdhistory/addorderdhistory">Add Ordered History</a>
-					<a href="/orderdhistory/findorderhistoryform">View Ordered History</a>
-					<a href="/orderdhistory/findorderhistorybyorderdetailsform">View Order History With Order Details</a>
-				    <a href="/orderdhistory/findordershopdetailsform">View Ordered Shop Details</a>
+					<a href="/orderdetails/orderdetailslist">Sold Book List</a> <a
+						href="/orderdetails/addorderdetails">Sell Book</a> <a
+						href="/orderdetails/findorderbookdetailsbyidform"> View Sold
+						Book Details</a> <a href="/orderdetails/updateorderdetailsform">Update
+						sold Book </a> <a href="/orderdetails/deleteorderbookdetailsform">Remove
+						Sold Book Details </a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">
+					All Orders History Details <em class="fa fa-caret-down"></em>
+				</button>
+				<div class="dropdown-content">
+					<a href="/orderdhistory/orderdhistorylist">All Ordered History
+						List</a> <a href="/orderdhistory/addorderdhistory">Add New Ordered
+						History</a> <a href="/orderdhistory/findorderhistoryform">View
+						Ordered History Details </a> <a
+						href="/orderdhistory/findorderhistorybyorderdetailsform">View
+						OrderedHistory and Sold Books Details</a> <a
+						href="/orderdhistory/findordershopdetailsform">View
+						OrderedHistory and OrderedShop Details</a>
 				</div>
 			</div>
 
 			<div class="dropdown">
 				<button class="dropbtn">
-					Shop Details <i class="fa fa-caret-down"></i>
+					All Shop Details <em class="fa fa-caret-down"></em>
 				</button>
 				<div class="dropdown-content">
-					<a href="/shop/shoplist">Shop List</a>
-					<a href="/shop/addshop">Add Shop</a>
-				    <a href="/shop/findshopform">View Order Shop</a>
+					<a href="/shop/shoplist">Available Shop List</a> <a
+						href="/shop/addshop">Add New Shop</a> <a href="/shop/findshopform">View
+						Shop Details </a>
 				</div>
 			</div>
 
