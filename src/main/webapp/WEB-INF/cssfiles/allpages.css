@@ -6,14 +6,8 @@ body {
 	height: 768px;
 	width: 1366px;
 	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: cover;
 	position: relative;
 	overflow: hidden;
-}
-
-h1 {
-	text-align: center;
 }
 
 h2 {
@@ -87,6 +81,7 @@ a {
 h1 {
 	font-family: lucida Handwriting, Cursive;
 	color: white;
+	text-align: center;
 }
 
 .navbar {
@@ -150,10 +145,6 @@ h1 {
 .dropdown:hover .dropdown-content {
 	display: block;
 	background-color: FF00FF;
-}
-
-en {
-	color: blue;
 }
 table, th, td{
 border: 2px solid black;

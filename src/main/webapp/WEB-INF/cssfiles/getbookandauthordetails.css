@@ -4,7 +4,6 @@
 }
 
 body {
-	/* background-color: AntiqueWhite; */
 	font-family: sans-serif;
 	display: flex;
 	text-align: left;
@@ -21,7 +20,6 @@ body {
 .container {
 	display: inline-flex;
 	background-color: AntiqueWhite;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 219px;
@@ -47,10 +45,8 @@ body {
 
 .form label {
 	cursor: pointer;
-	display: inline-block;
 	padding: 3px 6px;
 	text-align: left;
-	width: 127px;
 	vertical-align: top;
 	display: inline-block;
 	width: 150px;
@@ -59,7 +55,6 @@ body {
 
 .form input {
 	font-size: inherit;
-	border-radious: 4px;
 	padding: 8px;
 }
 
