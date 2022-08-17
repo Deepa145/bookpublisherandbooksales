@@ -136,6 +136,7 @@ height: 40px;
 		<div class="book">
 		<div id="OrderDetailslist">
 			<table class="tb">
+			<caption></caption>
 				<thead>
 					<tr>
 						<th>Ordered Id</th>

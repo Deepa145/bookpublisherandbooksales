@@ -68,7 +68,7 @@ public class ShopController {
 	    }
 	    
 	    @PostMapping("/updateshop")
-	    public String UpdateShops(@Valid @ModelAttribute("updateshop") Shop theshop,Errors error)
+	    public String updateShops(@Valid @ModelAttribute("updateshop") Shop theshop,Errors error)
 	    {
 	    	if(error.hasErrors())
 			{

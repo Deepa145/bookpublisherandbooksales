@@ -13,10 +13,8 @@ public class ShopService {
 @Autowired
 private ShopRepository shopRepository;
 public List<Shop> getallShops() {
-    List<Shop> listShop = shopRepository.findAll();
-    return listShop;
+    return shopRepository.findAll();
 }
-// @Transactional
 public Shop save(Shop shop) {
     return shopRepository.save(shop);
 }

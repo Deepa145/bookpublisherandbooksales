@@ -166,6 +166,10 @@ h1 {
 en {
 	color: blue;
 }
+table, th, td{
+border: 2px solid black;
+height: 40px;
+}
 </style>
 </head>
 <body>
@@ -254,7 +258,8 @@ en {
 
 		</ul>
 		<div id="table root">
-			<table border="2" width="100%" cellpadding="10">
+			<table class="tb">
+			<caption></caption>
 				<thead>
 					<tr>
 						<th>Author Id</th>

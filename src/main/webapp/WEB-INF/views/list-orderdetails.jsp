@@ -43,6 +43,7 @@ button {
 <div class="book">
 	<div id="table root">
 		 <table class="tb">
+		 <caption></caption>
 			<thead>
 				<tr>
 					<th>Ordered Id</th>
