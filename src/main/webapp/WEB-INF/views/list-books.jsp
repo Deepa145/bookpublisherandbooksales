@@ -7,36 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>Book List</title>
 <style>
-.book {
-	background-color: #0eddbc;
-}
-
-body {
-	font-family: sans-serif;
-	display: flex;
-	text-align: left;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	margin: 0;
-	background-image:
-		url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Books_HD_%288314929977%29.jpg/1200px-Books_HD_%288314929977%29.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-table, th, td {
-	border: 2px solid black;
-	height: 40px;
-}
-
-button {
-	text-align: center;
-	margin-left: 374px;
-	width: 100px;
-	height: 35px;
-	margin-top: 10px;
-}
+<%@include file="/WEB-INF/cssfiles/bookslist.css"%>
 </style>
 </head>
 <body>

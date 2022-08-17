@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="ISO-8859-1"> 
 <title>Add Authors</title>
 <style>
 <%@include file="/WEB-INF/cssfiles/addauthors.css"%>

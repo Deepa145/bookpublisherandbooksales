@@ -1,0 +1,161 @@
+body {
+	background-image:
+		url("https://us.123rf.com/450wm/wamsler/wamsler1408/wamsler140800080/30944287-rij-van-boeken-grungy-achtergrond-gratis-exemplaar-ruimte.jpg?ver=6");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 768px;
+	width: 1366px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	color: #382d9c;
+	margin-top: 50px;
+	text-align: center;
+}
+
+nav {
+	background-color: #0ab57a;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+ul {
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+li {
+	display: inline-block;
+	color: rgb(243, 221, 209);
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	cursor: pointer;
+	justify-content: center;
+	text-align: center;
+	margin-left: 80px;
+}
+
+li:hover {
+	background-color: rgb(236, 126, 126);
+	color: rgb(54, 50, 48);
+}
+
+table {
+	margin-top: 33px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+td, th {
+	text-align: left;
+	padding: 10px;
+}
+
+.center_col {
+	padding-left: 40px;
+}
+
+th {
+	background-color: #d68989;
+}
+
+tr {
+	background-color: #dcc0ec;
+}
+
+a {
+	text-decoration: none;
+	font-size: 20px;
+}
+
+h1 {
+	font-family: lucida Handwriting, Cursive;
+	color: white;
+}
+
+.navbar {
+	overflow: hidden;
+	background-color: #38fca4;
+}
+
+.navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+	color: blue;
+}
+
+.dropdown .dropbtn {
+	font-size: 23px;
+	border: none;
+	outline: none;
+	color: #000000;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: #a8a3dd;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	background-color: FF00FF;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+	background-color: FF00FF;
+}
+
+en {
+	color: blue;
+}
+table, th, td{
+border: 2px solid black;
+height: 14px;
+}
