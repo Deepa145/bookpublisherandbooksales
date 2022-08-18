@@ -71,10 +71,6 @@ button {
 	margin-top: 10px;
 } 
 
-.text-danger {
-	color: #e80c4d;
-	font-size: 0.9em;
-}
 table, th, td{
 border: 2px solid black;
 height: 40px;
