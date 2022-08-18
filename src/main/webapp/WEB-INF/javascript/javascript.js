@@ -1,4 +1,4 @@
-var AdminNameCheck = function() {
+let AdminNameCheck = function() {
     if(document.myForm.name.value == ""){
         
         if(alert("User Id cannot be blank")){
@@ -12,8 +12,8 @@ var AdminNameCheck = function() {
         return false;
     } 
 }
-var AdminpasswordCheck = function() {
-     var passwordRegex = new RegExp(" /^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{5,10}$/");
+let AdminpasswordCheck = function() {
+     let passwordRegex = new RegExp(" /^[A-Za-z0-9._%+-]+$/");
      if(!document.myForm.password.value.match(passwordRegex)){
             if(alert("Password must be contain 5 to 10 characters which contain at least one numeric digit, one uppercase and one lowercase letter")){ 
                  document.myForm.password.focus();
