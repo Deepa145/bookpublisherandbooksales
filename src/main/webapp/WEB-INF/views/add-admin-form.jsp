@@ -15,7 +15,7 @@
 	<div class="container" id="root">
 		<div class="header" id="form">
 			<p>
-				<button onclick="document.location='/localhost:8080'">Back</button>
+				<button class="button-85" role="button" onclick="document.location='/localhost:8080'">Back</button>
 			</p>
 			<div id="root">
 				<div id="form">

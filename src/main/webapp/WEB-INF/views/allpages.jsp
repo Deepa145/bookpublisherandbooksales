@@ -14,6 +14,7 @@
 <body>
 	<h1 style="color: #bb0e0e">Welcome to Book Sales and Book
 		Publishing !!!</h1>
+		<button Class="button-85" role="button" onclick="document.location='/bookAdmin/index'">Back</button>
 	<nav>
 		<ul>
 			<div class="dropdown">
