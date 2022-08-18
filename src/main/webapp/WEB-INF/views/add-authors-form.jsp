@@ -40,7 +40,7 @@
 				<div>
 					<label for="phoneNumber">Phone Number</label>
 						<form:input path="phoneNumber" placeholder="Phone Number" 
-						pattern="^[0-9]+$" required="true"/>
+						pattern="^\\d{10}$" required="true"/>
 				</div>
 				<form:errors path="phoneNumber" class="text-box" />
 				

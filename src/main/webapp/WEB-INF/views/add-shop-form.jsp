@@ -37,7 +37,7 @@
 						<div>
 							<label for="phoneNumber">Phone Number</label>
 							<form:input path="phoneNumber" placeholder="phoneNumber"
-								type="number" required="true" />
+								pattern="^\\d{10}$" type="number" required="true" />
 						</div>
 						<form:errors path="phoneNumber" class="text-box" />
 						<div>

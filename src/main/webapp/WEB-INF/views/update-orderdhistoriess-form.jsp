@@ -49,7 +49,7 @@
 							<label for="orderedDate">Ordered Date</label>
 							<div>
 								<form:input path="orderedDate" type="date"
-									placeholder="orderedDate" required="true" min="2022-08-17"/>
+									placeholder="orderedDate" required="true" min="2022-08-18"/>
 							</div>
 						</div>
 						<form:errors path="orderedDate" class="text-box" />

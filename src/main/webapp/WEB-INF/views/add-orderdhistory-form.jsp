@@ -36,7 +36,7 @@
 						<div>
 							<label for="orderedDate">Ordered Date</label>
 							<form:input path="orderedDate" type="date"
-								placeholder="orderedDate" required="true" />
+								placeholder="orderedDate" min="2022-08-18" required="true" />
 						</div>
 						<form:errors path="orderedDate" cssClass="text-danger" />
 

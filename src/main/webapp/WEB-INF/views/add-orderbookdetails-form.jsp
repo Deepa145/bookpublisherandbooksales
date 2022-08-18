@@ -23,23 +23,23 @@
 						<div>
 							<label for="orderedId">Ordered Id</label>
 							<form:input path="orderedId" placeholder="Order Id"
-								pattern="^[0-9]+$" title="Must have OrderId" required="true"
-								type="number" />
+								pattern="^[1-9][0-9]*$" name="quantity" title="Must have OrderId" required="true"
+							 />
 						</div>
 						<form:errors path="orderedId" cssClass="text-box" />
 
 						<div>
 							<label for="bookId">Book Id</label>
 							<form:input path="bookId" title="Must have BookId"
-								placeholder="Book Id" pattern="^[0-9]+$" required="true"
-								type="number" />
+								placeholder="Book Id" name="quantity" pattern="^[1-9][0-9]*$" required="true"
+								 />
 						</div>
 						<form:errors path="bookId" class="text-box" />
 
 						<div>
 							<label for="quantity">Quantity</label>
 							<form:input path="quantity" title="Must have quantity"
-								placeholder="Quantity" required="true" type="number" />
+								placeholder="Quantity" name="quantity" required="true" pattern="^[0-9]+$" />
 						</div>
 						<form:errors path="quantity" class="text-box" />
 

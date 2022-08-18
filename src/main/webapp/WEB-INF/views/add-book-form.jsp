@@ -28,7 +28,7 @@
 						<div>
 							<label for="dateOfPublishing">DateOfPublishing</label>
 							<form:input path="dateOfPublishing" type="date"
-								placeholder="DateOfPublishing" required="true" />
+								placeholder="DateOfPublishing" max="2022-08-17" required="true" />
 						</div>
 						<div>
 							<label for="category">Category</label>
