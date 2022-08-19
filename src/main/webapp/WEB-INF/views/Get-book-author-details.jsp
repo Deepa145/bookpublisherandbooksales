@@ -18,7 +18,7 @@
 				style="margin: 0;">
 				<div>
 				<label>Enter id </label> <input type="text" placeholder="book id"
-					name="bookid" pattern="^[0-9]+$" required="true" > <input type='submit' value="View"
+					name="bookid" pattern="^[0-9]+$" type="number" required="true" > <input type='submit' value="View"
 					name="submit">
 					</div>
 			</form>

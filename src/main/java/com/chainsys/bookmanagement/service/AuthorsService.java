@@ -30,7 +30,9 @@ public void deleteById(int id) {
 	authorsrepo.deleteById(id);
 }
 
-
+public List<Authors> allAuthors(){
+	return authorsrepo.findAll();
+}
 
 }
 

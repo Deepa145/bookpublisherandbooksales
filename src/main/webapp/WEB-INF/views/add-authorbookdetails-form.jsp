@@ -22,19 +22,25 @@
 						modelAttribute="addauthorbookdetails">
 						<div>
 							<label for="authorId">Author Id</label>
+                        <form:select path="authorId" placeholder="Author Id">
 
-							<form:input path="authorId" placeholder="Author Id" id="authorId"
-								pattern="^[0-9]+$" title="authorId must have number"
-								required="true" type="number" />
-
+                            <c:forEach var="allAuthors" items="${getauthors}">
+                                <form:option value="${allAuthors.authorId}"
+                                    label="${allAuthors.authorId}" />
+                            </c:forEach>
+                        </form:select>
 						</div>
 						<form:errors path="authorId" cssClass="text-danger" />
 						<div>
 							<label for="bookId">Book Id</label>
+							 <form:select path="bookId" placeholder="Book Id">
 
-							<form:input path="bookId" placeholder="Book Id" id="bookId"
-								title="bookId must have number" pattern="^[0-9]+$"
-								required="true" type="number" />
+                            <c:forEach var="allBooks" items="${getbooks}">
+                                <form:option value="${allBooks.bookId}"
+                                    label="${allBooks.bookId}" />
+                            </c:forEach>
+                        </form:select>
+							
 
 						</div>
 						<form:errors path="bookId" cssClass="text-danger" />

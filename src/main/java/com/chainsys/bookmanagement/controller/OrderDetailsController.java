@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.chainsys.bookmanagement.compositekey.OrderdDetailsCompositeKey;
 import com.chainsys.bookmanagement.model.Book;
 import com.chainsys.bookmanagement.model.OrderDetails;
+import com.chainsys.bookmanagement.model.OrderedHistory;
 import com.chainsys.bookmanagement.service.BookService;
 import com.chainsys.bookmanagement.service.OrderDetailsService;
+import com.chainsys.bookmanagement.service.OrderdHistoryService;
 
 
 @Controller
@@ -28,6 +30,8 @@ public class OrderDetailsController {
 	private OrderDetailsService orderDetailsService;
 	 @Autowired
 	 private BookService bookService;
+	 @Autowired
+	 private OrderdHistoryService orderdHistoryService;
 	 @GetMapping("/orderdetailslist")
 	    public String getallOrderDetails(Model model) {
 	    	List<OrderDetails> allorderDetails = orderDetailsService.getallOrderDetails();
@@ -50,6 +54,10 @@ public class OrderDetailsController {
 	    
 	    @GetMapping("/addorderdetails")
 	    public String showAddForm(Model model) {
+	    	List<OrderedHistory> allOrderedHistory=orderdHistoryService.allOrderedHistory();
+	    	model.addAttribute("getallorderedhistory", allOrderedHistory);
+	    	List<Book> allBooks=bookService.allBooks();
+	    	model.addAttribute("getallbooks", allBooks);
 	    	List<OrderDetails> allorderDetails = orderDetailsService.allorderdHistory();
 	        model.addAttribute("allOrderbookDetails", allorderDetails);
 	        OrderDetails theorderdetails=new OrderDetails();

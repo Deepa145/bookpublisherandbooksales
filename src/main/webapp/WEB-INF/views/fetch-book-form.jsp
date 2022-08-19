@@ -18,8 +18,10 @@
 				style="margin: 0;">
 				<div>
 					<label>Enter id </label> <input type="text" placeholder="book id"
-						pattern="^[0-9]+$" name="bookid" required="true"> <input
+						pattern="^[0-9]+$" name="bookid" type="number" required="true"> 
+						<input
 						type='submit' value="View" name="submit">
+						
 				</div>
 			</form>
 			<button onclick="document.location='/bookAdmin/index'">Back</button>

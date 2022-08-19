@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.chainsys.bookmanagement.model.Authors;
 import com.chainsys.bookmanagement.model.Book;
 import com.chainsys.bookmanagement.model.OrderDetails;
 import com.chainsys.bookmanagement.model.OrderDetailsDTO;
@@ -41,6 +42,9 @@ public List<OrderedHistory> getallOrderedHistory() {
 		return bookRepository.findById(id);
 	}
 	
+	public List<OrderedHistory> allOrderedHistory(){
+		return orderdHistoryRepository.findAll();
+	}
 	@Transactional
 	public OrderDetailsDTO getOrderHistoryAndOrderDetails(int id)
 	{

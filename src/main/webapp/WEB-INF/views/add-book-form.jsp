@@ -21,8 +21,16 @@
 						modelAttribute="addbooks">
 						<div>
 							<label for="bookName">BookName</label>
-							<form:input path="bookName" placeholder="Book Name"
-								pattern="^[A-Za-z\s]*$" required="true" />
+							<form:select path="bookName" placeholder="Book Name"
+								pattern="^[A-Za-z\s]*$" required="true" >
+								<form:option value="Select">--Select--</form:option>
+								<form:option value="Theentamil">Theentamil</form:option>
+									<form:option value="MarkingBard">MarkingBard</form:option>
+									<form:option value="WingsOfFire">WingsOfFire</form:option>
+									<form:option value="ChickenSoup">ChickenSoup</form:option>
+									<form:option value="TheWolf">TheWolf</form:option>
+									<form:option value="BelieveYourSelf">BelieveYourself</form:option>
+								</form:select>
 						</div>
 						<form:errors path="bookName" cssClass="text-danger" />
 						<div>
@@ -32,8 +40,19 @@
 						</div>
 						<div>
 							<label for="category">Category</label>
-							<form:input path="category" placeholder="Category"
-								pattern="^[A-Za-z\s]*$" required="true" />
+							<form:select path="category" placeholder="Category"
+								pattern="^[A-Za-z\s]*$" required="true" >
+								<form:option value="Select">--Select--</form:option>
+								<form:option value="History">History</form:option>
+								<form:option value="Science">Science</form:option>
+								<form:option value="Horror">Horror</form:option>
+								<form:option value="Philosophy">Philosophy</form:option>
+								<form:option value="Fiction">Fiction</form:option>
+								<form:option value="Business">Business</form:option>
+								<form:option value="Humor">Humor</form:option>
+								<form:option value="Psychology">Psychology</form:option>
+								<form:option value="Others">Others</form:option>
+								</form:select>
 						</div>
 						<form:errors path="category" cssClass="text-danger" />
 						<div>

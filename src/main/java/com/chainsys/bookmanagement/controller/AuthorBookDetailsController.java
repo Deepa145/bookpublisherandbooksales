@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bookmanagement.compositekey.AuthorBookDetailsCompositeKey;
 import com.chainsys.bookmanagement.model.AuthorBookDetails;
+import com.chainsys.bookmanagement.model.Authors;
+import com.chainsys.bookmanagement.model.Book;
 import com.chainsys.bookmanagement.service.AuthorBookDetailsService;
 import com.chainsys.bookmanagement.service.AuthorsService;
 import com.chainsys.bookmanagement.service.BookService;
@@ -40,6 +42,10 @@ public class AuthorBookDetailsController {
 
 	@GetMapping("/addauthorbookdetails")
 	public String showAddForm(Model model) {
+		List<Authors> allAuthorDetails=authorsService.allAuthors();
+		model.addAttribute("getauthors",allAuthorDetails);
+		List<Book> allBookDetails=bookService.allBooks();
+		model.addAttribute("getbooks", allBookDetails);
 		List<AuthorBookDetails> allBooks = aubkservice.allBooks();
 		model.addAttribute("allbooks", allBooks);
 		AuthorBookDetails theauthorbk = new AuthorBookDetails();

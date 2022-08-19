@@ -22,7 +22,7 @@
 							<label for="authorId">Author Id</label>
 							<div>
 								<form:input path="authorId" placeholder="authorId" type="number"
-									required="true" />
+								readonly="true"	required="true" />
 							</div>
 						</div>
 						<form:errors path="authorId" class="text-box" />
@@ -32,7 +32,7 @@
 							<label for="authorName">Author Name</label>
 							<div>
 								<form:input path="authorName" pattern="^[A-Za-z\s]*$"
-									placeholder="authorName" required="true" />
+									readonly="true" placeholder="authorName" required="true" />
 							</div>
 						</div>
 						<form:errors path="authorName" class="text-box" />

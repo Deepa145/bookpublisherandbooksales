@@ -23,15 +23,22 @@
 							<label for="bookId">Book Id</label>
 							<div>
 								<form:input path="bookId" pattern="^[0-9]+$" type="number"
-									placeholder="bookId" required="true" />
+									placeholder="bookId" readonly="true" required="true" />
 							</div>
 						</div>
 						<form:errors path="bookId" class="text-box" />
 						<div>
 							<label for="bookName">bookName</label>
 							<div>
-								<form:input path="bookName" pattern="^[A-Za-z\s]*$"
-									placeholder="bookName" required="true" />
+								<form:select path="bookName" pattern="^[A-Za-z\s]*$"
+									placeholder="bookName" required="true" >
+									<form:option value="Theentamil">Theentamil</form:option>
+									<form:option value="MarkingBard">MarkingBard</form:option>
+									<form:option value="WingsOfFire">WingsOfFire</form:option>
+									<form:option value="ChickenSoup">ChickenSoup</form:option>
+									<form:option value="TheWolf">TheWolf</form:option>
+									<form:option value="BelieveYourSelf">BelieveYourself</form:option>
+									</form:select>
 							</div>
 						</div>
 						<form:errors path="bookName" class="text-box" />
@@ -46,8 +53,18 @@
 						<div>
 							<label for="category">category</label>
 							<div>
-								<form:input path="category" pattern="^[A-Za-z\s]*$"
-									placeholder="category" required="true" />
+								<form:select path="category" pattern="^[A-Za-z\s]*$"
+									placeholder="category" required="true" >
+								<form:option value="History">History</form:option>
+								<form:option value="Science">Science</form:option>
+								<form:option value="Horror">Horror</form:option>
+								<form:option value="Philosophy">Philosophy</form:option>
+								<form:option value="Fiction">Fiction</form:option>
+								<form:option value="Business">Business</form:option>
+								<form:option value="Humor">Humor</form:option>
+								<form:option value="Psychology">Psychology</form:option>
+								<form:option value="Others">Others</form:option>
+									</form:select>
 							</div>
 						</div>
 						<form:errors path="category" class="text-box" />

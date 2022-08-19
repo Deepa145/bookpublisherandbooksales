@@ -22,17 +22,25 @@
 
 						<div>
 							<label for="orderedId">Ordered Id</label>
-							<form:input path="orderedId" placeholder="Order Id"
-								pattern="^[1-9][0-9]*$" name="quantity" title="Must have OrderId" required="true"
-							 />
+							<form:select path="orderedId" placeholder="Order Id">
+
+                            <c:forEach var="allOrdersHistory" items="${getallorderedhistory}">
+                                <form:option value="${allOrdersHistory.orderedId}"
+                                    label="${allOrdersHistory.orderedId}" />
+                            </c:forEach>
+                        </form:select>
 						</div>
 						<form:errors path="orderedId" cssClass="text-box" />
 
 						<div>
 							<label for="bookId">Book Id</label>
-							<form:input path="bookId" title="Must have BookId"
-								placeholder="Book Id" name="quantity" pattern="^[1-9][0-9]*$" required="true"
-								 />
+							<form:select path="bookId" placeholder="Book Id">
+
+                            <c:forEach var="allBooks" items="${getallbooks}">
+                                <form:option value="${allBooks.bookId}"
+                                    label="${allBooks.bookId}" />
+                            </c:forEach>
+                        </form:select>
 						</div>
 						<form:errors path="bookId" class="text-box" />
 

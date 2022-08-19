@@ -48,7 +48,9 @@ public class BookService {
 	public Authors findByIdAuthor(int id) {
 		return authorsRepository.findById(id);
 	}
-
+	public List<Book> allBooks(){
+		return bookRepository.findAll();
+	}
 	@Transactional
 	public AuthorBookDetailsDTO getAuthorAndAuthorBookDetails(int id) {
 		Book book = findById(id);
